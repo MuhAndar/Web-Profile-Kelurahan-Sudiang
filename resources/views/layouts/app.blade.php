@@ -88,7 +88,10 @@
         <li class="treeview">
             <li><a href="#"><i class="fa fa-dashboard"></i>Dashboard</a></li>
             <li><a href="{{ route('categories.index') }}"><i class="fa fa-adjust"></i>Categories</a></li>
-            <li><a href="{{ route('articles.index') }}"><i class="fa fa-pencil"></i>Artikel</a></li>
+            <li><a href="{{ route('articles.index') }}"><i class="fa fa-user"></i>Profil</a></li>
+            <li><a href="{{ route('articles.index') }}"><i class="fa fa-users"></i>Staff</a></li>
+            <li><a href="{{ route('articles.index') }}"><i class="fa fa-book"></i>Syarat</a></li>
+            <li><a href="{{ route('articles.index') }}"><i class="fa fa-phone-square-alt"></i>Kontak</a></li>
         </li>
       </ul>
     </section>
