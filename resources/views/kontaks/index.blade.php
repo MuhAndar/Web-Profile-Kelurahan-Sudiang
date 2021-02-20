@@ -3,14 +3,14 @@
 <script src="{{ asset('plugins/datatables/dataTables.bootstrap.css') }}"></script>
 @endpush
   @section('title','Dashboard')
-  @section('page-title','Categories')
+  @section('page-title','Kontak')
   @section('content')
   <!-- Default box -->
   <div class="box">
     <div class="box-header">
-      <h3 class="box-title">Categories Data</h3>
+      <h3 class="box-title">Data Kontak</h3>
       <div class="pull-right">
-        <a href="{{ route('categories.create') }}" class="btn btn-info">Tambah Data</a>
+        <a href="{{ route('kontaks.create') }}" class="btn btn-info">Tambah Data</a>
       </div>
     </div>
     <!-- /.box-header -->
@@ -19,28 +19,36 @@
         <thead>
         <tr>
           <th>No</th>
-          <th>Nama Categories</th>
-          <th>Slug</th>
+          <th>Nama</th>
+          <th>Email</th>
+          <th>Alamat</th>
+          <th>Nomor Telepon</th>
           <th>Action</th>
         </tr>
         </thead>
         <tbody>
-            @foreach ($categories as $item)
+            @foreach ($kontaks as $item)
                 <tr>
                     <td>
                         {{$loop -> iteration}}
                     </td>
                     <td>
-                        {{$item->nama_kategori}}
+                        {{$item->nama}}
                     </td>
                     <td>
-                       {{$item->slug}}
+                        {{$item->email}}
+                    </td>
+                    <td>
+                        {{$item->alamat}}
+                    </td>
+                    <td>
+                        {{$item->no_telepon}}
                     </td>
                     <td> 
-                        <a href="{{ route('categories.edit', $item->id) }}" class="btn btn-info">Edit</a>
+                        <a href="{{ route('kontaks.edit', $item->id) }}" class="btn btn-info">Edit</a>
                         <a href="javascript:void(0)" onclick ="$(this).find('form').submit()" class="btn btn-danger">
                             <span class="fa fa-trash"></span>
-                            <form action="{{ route('categories.destroy' , $item->id) }}" method="POST">
+                            <form action="{{ route('kontaks.destroy' , $item->id) }}" method="POST">
                               @csrf
                               @method('DELETE')
                             </form>

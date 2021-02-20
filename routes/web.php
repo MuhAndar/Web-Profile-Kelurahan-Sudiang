@@ -22,3 +22,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('categories', 'CategoriesController');
 
 Route::resource('articles', 'ArticlesController');
+
+Route::resource('kontaks', 'KontaksController');
+
+Route::resource('populasi', 'HomePopulasisController');
+
+Route::resource('tengah', 'HomeTengahController');

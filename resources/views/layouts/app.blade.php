@@ -91,7 +91,9 @@
             <li><a href="{{ route('articles.index') }}"><i class="fa fa-user"></i>Profil</a></li>
             <li><a href="{{ route('articles.index') }}"><i class="fa fa-users"></i>Staff</a></li>
             <li><a href="{{ route('articles.index') }}"><i class="fa fa-book"></i>Syarat</a></li>
-            <li><a href="{{ route('articles.index') }}"><i class="fa fa-phone-square-alt"></i>Kontak</a></li>
+            <li><a href="{{ route('kontaks.index') }}"><i class="fa fa-phone-square-alt"></i>Kontak</a></li>
+            <li><a href="{{ route('populasi.index') }}"><i class="fa fa-phone-square-alt"></i>Populasi</a></li>
+            <li><a href="{{ route('tengah.index') }}"><i class="fa fa-phone-square-alt"></i>Tengah</a></li>
         </li>
       </ul>
     </section>

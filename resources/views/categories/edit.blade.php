@@ -1,5 +1,5 @@
 @extends('layouts.app')
-  @section('title','Dahboard')
+  @section('title','Dashboard')
   @section('page-title','Edit')
   @section('content')
   <div class="row">

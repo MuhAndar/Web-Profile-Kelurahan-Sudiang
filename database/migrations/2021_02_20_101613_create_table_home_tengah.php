@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableKontaks extends Migration
+class CreateTableHomeTengah extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateTableKontaks extends Migration
      */
     public function up()
     {
-        Schema::create('table_kontaks', function (Blueprint $table) {
+        Schema::create('table_home_tengah', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nama');
-            $table->string('email')->index();
-            $table->string('alamat');
-            $table->string('no_telepon');
+            $table->timestamps();
         });
     }
 
@@ -29,6 +26,6 @@ class CreateTableKontaks extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_kontaks');
+        Schema::dropIfExists('table_home_tengah');
     }
 }

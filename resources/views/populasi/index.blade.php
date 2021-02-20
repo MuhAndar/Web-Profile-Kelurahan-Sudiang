@@ -3,14 +3,14 @@
 <script src="{{ asset('plugins/datatables/dataTables.bootstrap.css') }}"></script>
 @endpush
   @section('title','Dashboard')
-  @section('page-title','Categories')
+  @section('page-title','Kontak')
   @section('content')
   <!-- Default box -->
   <div class="box">
     <div class="box-header">
-      <h3 class="box-title">Categories Data</h3>
+      <h3 class="box-title">Data Populasi</h3>
       <div class="pull-right">
-        <a href="{{ route('categories.create') }}" class="btn btn-info">Tambah Data</a>
+        <a href="{{ route('populasi.create') }}" class="btn btn-info">Tambah Data</a>
       </div>
     </div>
     <!-- /.box-header -->
@@ -19,28 +19,36 @@
         <thead>
         <tr>
           <th>No</th>
-          <th>Nama Categories</th>
-          <th>Slug</th>
+          <th>Jumlah Laki-Laki</th>
+          <th>Jumlah Perempuan</th>
+          <th>Jumlah Total Laki-Laki/Perempuan</th>
+          <th>Jumlah Kepala Keluarga</th>
           <th>Action</th>
         </tr>
         </thead>
         <tbody>
-            @foreach ($categories as $item)
+            @foreach ($populasi as $item)
                 <tr>
                     <td>
                         {{$loop -> iteration}}
                     </td>
                     <td>
-                        {{$item->nama_kategori}}
+                        {{$item->jl}}
                     </td>
                     <td>
-                       {{$item->slug}}
+                        {{$item->jp}}
+                    </td>
+                    <td>
+                        {{$item->jlp}}
+                    </td>
+                    <td>
+                        {{$item->jkk}}
                     </td>
                     <td> 
-                        <a href="{{ route('categories.edit', $item->id) }}" class="btn btn-info">Edit</a>
+                        <a href="{{ route('populasi.edit', $item->id) }}" class="btn btn-info">Edit</a>
                         <a href="javascript:void(0)" onclick ="$(this).find('form').submit()" class="btn btn-danger">
                             <span class="fa fa-trash"></span>
-                            <form action="{{ route('categories.destroy' , $item->id) }}" method="POST">
+                            <form action="{{ route('populasi.destroy' , $item->id) }}" method="POST">
                               @csrf
                               @method('DELETE')
                             </form>

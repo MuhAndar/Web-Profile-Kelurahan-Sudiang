@@ -47,7 +47,7 @@ class ArticlesController extends Controller
             'gambar' => $image,
             'categories_id' => $request->categories_id
         ]);
-        return redirect()->route('articles.index');
+        // return redirect()->route('articles.index');
     }
 
     /**
