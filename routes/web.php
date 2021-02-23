@@ -17,6 +17,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
+// Back end
+
+Route::group(['middleware' => 'auth'], function (){
+
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('categories', 'CategoriesController');
@@ -48,3 +54,5 @@ Route::resource('kebersihan', 'KSKebersihanController');
 Route::resource('pemerintahan', 'KSPemerintahanController');
 
 Route::resource('perekonomian', 'KSPerekonomianController');
+
+});

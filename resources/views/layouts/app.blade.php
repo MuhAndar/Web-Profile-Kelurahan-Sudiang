@@ -86,22 +86,54 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="treeview">
-            <li><a href="#"><i class="fa fa-dashboard"></i>Dashboard</a></li>
-            <li><a href="{{ route('categories.index') }}"><i class="fa fa-adjust"></i>Categories</a></li>
-            <li><a href="{{ route('articles.index') }}"><i class="fa fa-user"></i>Artikel</a></li>
-            <li><a href="{{ route('articles.index') }}"><i class="fa fa-users"></i>Staff</a></li>
-            <li><a href="{{ route('articles.index') }}"><i class="fa fa-book"></i>Syarat</a></li>
-            <li><a href="{{ route('kontaks.index') }}"><i class="fa fa-phone-square-alt"></i>Kontak</a></li>
-            <li><a href="{{ route('populasi.index') }}"><i class="fa fa-phone-square-alt"></i>Populasi</a></li>
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Home</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
             <li><a href="{{ route('tengah.index') }}"><i class="fa fa-phone-square-alt"></i>Tengah</a></li>
-            <li><a href="{{ route('sekretaris.index') }}"><i class="fa fa-phone-square-alt"></i>Sekretaris</a></li>
-            <li><a href="{{ route('sekretaris.index') }}"><i class="fa fa-phone-square-alt"></i>Syarat Kepengurusan</a></li>
-            <li><a href="{{ route('kebersihan.index') }}"><i class="fa fa-phone-square-alt"></i>Kepala Seksi Kebersihan</a></li>
-            <li><a href="{{ route('pemerintahan.index') }}"><i class="fa fa-phone-square-alt"></i>Kepala Seksi Pemerintahan</a></li>
-            <li><a href="{{ route('perekonomian.index') }}"><i class="fa fa-phone-square-alt"></i>Kepala Seksi Perekonomian</a></li>
+            <li><a href="{{ route('populasi.index') }}"><i class="fa fa-phone-square-alt"></i>Populasi</a></li>
+          </ul>
+        </li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Profil</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
             <li><a href="{{ route('sambutan.index') }}"><i class="fa fa-phone-square-alt"></i>Sambutan</a></li>
             <li><a href="{{ route('ringkasan.index') }}"><i class="fa fa-phone-square-alt"></i>Ringkasan</a></li>
             <li><a href="{{ route('visimisi.index') }}"><i class="fa fa-phone-square-alt"></i>Visi & Misi</a></li>
+          </ul>
+        </li>
+
+        <li><a href="{{ route('articles.index') }}"><i class="fa fa-users"></i>Staff</a></li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Syarat Kepengurusan</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ route('sekretaris.index') }}"><i class="fa fa-phone-square-alt"></i>Sekretaris</a></li>
+            <li><a href="{{ route('kebersihan.index') }}"><i class="fa fa-phone-square-alt"></i>Kepala Seksi Kebersihan</a></li>
+            <li><a href="{{ route('pemerintahan.index') }}"><i class="fa fa-phone-square-alt"></i>Kepala Seksi Pemerintahan</a></li>
+            <li><a href="{{ route('perekonomian.index') }}"><i class="fa fa-phone-square-alt"></i>Kepala Seksi Perekonomian</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+
+            {{-- <li><a href="{{ route('categories.index') }}"><i class="fa fa-adjust"></i>Categories</a></li>
+            <li><a href="{{ route('articles.index') }}"><i class="fa fa-user"></i>Artikel</a></li>
+            <li><a href="{{ route('articles.index') }}"><i class="fa fa-book"></i>Syarat</a></li> --}}
+            <li><a href="{{ route('kontaks.index') }}"><i class="fa fa-phone-square-alt"></i>Kontak</a></li>
           </li>
       </ul>
     </section>

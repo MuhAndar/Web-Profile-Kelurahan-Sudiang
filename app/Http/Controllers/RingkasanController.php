@@ -81,15 +81,32 @@ class RingkasanController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'text1' => 'required',
+            'text2' => 'required',
+            'text3' => 'required',
+            'gambar' => 'mimes:jpeg,bmp,png',
+        ]);
 
-        $ringkasan = Ringkasan::find($id);
-        Storage::delete($ringkasan->gambar);
-        $ringkasan->update([
+        if(empty($request->file('gambar'))){
+            $ringkasan = Ringkasan::find($id);
+            $ringkasan->update([
+            'text1' => $request->text1,
+            'text2' => $request->text2,
+            'text3' => $request->text3,
+        ]);
+
+        }else{
+            $ringkasan = Ringkasan::find($id);
+            Storage::delete($visimisi->gambar);
+            $ringkasan->update([
             'text1' => $request->text1,
             'text2' => $request->text2,
             'text3' => $request->text3,
             'gambar' => $request->file('gambar')->store('ringkasan'),
-        ]);
+            ]);
+        }
+
         return redirect()->route('ringkasan.index');
     }
 
