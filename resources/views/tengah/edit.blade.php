@@ -8,9 +8,7 @@
   <!-- Default box -->
   <div class="box">
     <div class="box-header">
-      <h3 class="box-title">Edit Artikel
-
-      </h3>
+      <h3 class="box-title">Edit Data Home Tengah</h3>
     </div>
     <!-- /.box-header -->
     <div class="box-body pad">
@@ -19,7 +17,7 @@
         @method('PUT')
         <div class="form-group">
           <label>Text 1</label>
-          <input type="text" value="{{$tengah->text1}}" class="form-control" name="text1">
+          <<input type="text" class="form-control" name="text1" placeholder="Nama"  value="{{ $tengah->text1 }}">
         </div>
         <div class="form-group">
           <label>Gambar 1</label>
@@ -42,7 +40,7 @@
           <input type="file" value="{{$tengah->gambar3}}" class="form-control" name="gambar3">
         </div>
         <div class="form-group">
-          <button type="submit" class="btn btn-primary">Update Artikel</button>
+          <button type="submit" class="btn btn-primary">Update Data</button>
           <a href="{{ route('tengah.index') }}" class="btn btn-danger">Kembali</a>
         </div>
       </form>

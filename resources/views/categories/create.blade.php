@@ -27,7 +27,7 @@
           </div>
           <!-- /.box-body -->
           <div class="box-footer">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Tambah Data</button>
             <a href="{{ route('categories.index') }}" class = "btn btn-danger">Kembali</a>
 
           </div>

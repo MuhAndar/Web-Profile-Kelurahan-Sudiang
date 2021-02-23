@@ -88,13 +88,21 @@
         <li class="treeview">
             <li><a href="#"><i class="fa fa-dashboard"></i>Dashboard</a></li>
             <li><a href="{{ route('categories.index') }}"><i class="fa fa-adjust"></i>Categories</a></li>
-            <li><a href="{{ route('articles.index') }}"><i class="fa fa-user"></i>Profil</a></li>
+            <li><a href="{{ route('articles.index') }}"><i class="fa fa-user"></i>Artikel</a></li>
             <li><a href="{{ route('articles.index') }}"><i class="fa fa-users"></i>Staff</a></li>
             <li><a href="{{ route('articles.index') }}"><i class="fa fa-book"></i>Syarat</a></li>
             <li><a href="{{ route('kontaks.index') }}"><i class="fa fa-phone-square-alt"></i>Kontak</a></li>
             <li><a href="{{ route('populasi.index') }}"><i class="fa fa-phone-square-alt"></i>Populasi</a></li>
             <li><a href="{{ route('tengah.index') }}"><i class="fa fa-phone-square-alt"></i>Tengah</a></li>
-        </li>
+            <li><a href="{{ route('sekretaris.index') }}"><i class="fa fa-phone-square-alt"></i>Sekretaris</a></li>
+            <li><a href="{{ route('sekretaris.index') }}"><i class="fa fa-phone-square-alt"></i>Syarat Kepengurusan</a></li>
+            <li><a href="{{ route('kebersihan.index') }}"><i class="fa fa-phone-square-alt"></i>Kepala Seksi Kebersihan</a></li>
+            <li><a href="{{ route('pemerintahan.index') }}"><i class="fa fa-phone-square-alt"></i>Kepala Seksi Pemerintahan</a></li>
+            <li><a href="{{ route('perekonomian.index') }}"><i class="fa fa-phone-square-alt"></i>Kepala Seksi Perekonomian</a></li>
+            <li><a href="{{ route('sambutan.index') }}"><i class="fa fa-phone-square-alt"></i>Sambutan</a></li>
+            <li><a href="{{ route('ringkasan.index') }}"><i class="fa fa-phone-square-alt"></i>Ringkasan</a></li>
+            <li><a href="{{ route('visimisi.index') }}"><i class="fa fa-phone-square-alt"></i>Visi & Misi</a></li>
+          </li>
       </ul>
     </section>
     <!-- /.sidebar -->

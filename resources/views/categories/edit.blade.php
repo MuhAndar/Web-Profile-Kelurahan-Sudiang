@@ -27,14 +27,12 @@
           </div>
           <!-- /.box-body -->
           <div class="box-footer">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Update Data</button>
             <a href="{{ route('categories.index') }}" class = "btn btn-danger">Kembali</a>
-
           </div>
         </form>
       </div>
     </div>
   </div>
       <!-- /.box -->
-
   @endsection

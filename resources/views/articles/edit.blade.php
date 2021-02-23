@@ -48,7 +48,6 @@
           <button type="submit" class="btn btn-primary">Update Artikel</button>
           <a href="{{ route('articles.index') }}" class="btn btn-danger">Kembali</a>
         </div>
-
       </form>
     </div>
   </div>

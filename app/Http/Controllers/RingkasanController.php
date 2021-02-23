@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Tengah;
+use App\Ringkasan;
 use Storage;
 
-class HomeTengahController extends Controller
+class RingkasanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class HomeTengahController extends Controller
      */
     public function index()
     {
-        $tengah = Tengah::latest()->get();
-        return view('tengah.index', compact('tengah'));
+        $ringkasan = Ringkasan::latest()->get();
+        return view('ringkasan.index', compact('ringkasan'));
     }
 
     /**
@@ -28,7 +28,7 @@ class HomeTengahController extends Controller
     {
         // $categories = Categories::select('id', 'nama_kategori')->get();
         
-        return view('tengah.create');// compact('categories'));
+        return view('ringkasan.create');// compact('categories'));
     }
 
     /**
@@ -39,18 +39,14 @@ class HomeTengahController extends Controller
      */
     public function store(Request $request)
     {
-        $image1 = $request->file('gambar1')->store('tengah');
-        $image2 = $request->file('gambar2')->store('tengah');
-        $image3 = $request->file('gambar3')->store('tengah');
-        Tengah::create([
+        $image = $request->file('gambar')->store('ringkasan');
+        Ringkasan::create([
             'text1' => $request->text1,
-            'gambar1' => $image1,
             'text2' => $request->text2,
-            'gambar2' => $image2,
             'text3' => $request->text3,
-            'gambar3' => $image3,
+            'gambar' => $image,
         ]);
-        return redirect()->route('tengah.index');
+        return redirect()->route('ringkasan.index');
     }
 
     /**
@@ -72,8 +68,8 @@ class HomeTengahController extends Controller
      */
     public function edit($id)
     {
-        $tengah = tengah::find($id);
-        return view('tengah.edit', compact('tengah'));
+        $ringkasan = Ringkasan::find($id);
+        return view('ringkasan.edit', compact('ringkasan'));
     }
 
     /**
@@ -86,19 +82,15 @@ class HomeTengahController extends Controller
     public function update(Request $request, $id)
     {
 
-        $tengah = Tengah::find($id);
-        Storage::delete($tengah->gambar1);
-        Storage::delete($tengah->gambar2);
-        Storage::delete($tengah->gambar3);
-        $tengah->update([
+        $ringkasan = Ringkasan::find($id);
+        Storage::delete($ringkasan->gambar);
+        $ringkasan->update([
             'text1' => $request->text1,
-            'gambar1' => $request->file('gambar1')->store('tengah'),
             'text2' => $request->text2,
-            'gambar2' => $request->file('gambar2')->store('tengah'),
             'text3' => $request->text3,
-            'gambar3' => $request->file('gambar3')->store('tengah'),
+            'gambar' => $request->file('gambar')->store('ringkasan'),
         ]);
-        return redirect()->route('tengah.index');
+        return redirect()->route('ringkasan.index');
     }
 
     /**
@@ -109,13 +101,13 @@ class HomeTengahController extends Controller
      */
     public function destroy($id)
     {
-        $tengah = Tengah::find($id);
-        if (!$tengah)
+        $ringkasan = Ringkasan::find($id);
+        if (!$ringkasan)
         {
             return redirect()->back();
         }
-            Storage::delete($tengah->gambar);
-            $tengah->delete();
-            return redirect()->route('tengah.index');
+            Storage::delete($ringkasan->gambar);
+            $ringkasan->delete();
+            return redirect()->route('ringkasan.index');
     }
 }

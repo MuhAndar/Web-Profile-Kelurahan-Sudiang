@@ -8,9 +8,9 @@
   <!-- Default box -->
   <div class="box">
     <div class="box-header">
-      <h3 class="box-title">Data Home Tengah</h3>
+      <h3 class="box-title">Data Artikel</h3>
       <div class="pull-right">
-          <a href="{{ route('tengah.create') }}" class="btn btn-info">Tambah Data</a>
+          <a href="{{ route('ringkasan.create') }}" class="btn btn-info">Tambah Data</a>
       </div>
     </div>
     <!-- /.box-header -->
@@ -20,30 +20,26 @@
         <tr>
           <th>No</th>
           <th>Text 1</th>
-          <th>Gambar 1</th>
           <th>Text 2</th>
-          <th>Gambar 2</th>
           <th>Text 3</th>
-          <th>Gambar 3</th>
+          <th>Gambar</th>
           <th></th>
         </tr>
         </thead>
         <tbody>
-          @foreach ($tengah as $item)
+          @foreach ($ringkasan as $item)
           <tr>
             <td>{{$loop -> iteration}}</td>
             <td>{{$item->text1}}</td>
-            <td><img src="{{ asset('uploads/'.$item->gambar1) }}" width="50px" height="50px" ></td>
             <td>{{$item->text2}}</td>
-            <td><img src="{{ asset('uploads/'.$item->gambar2) }}" width="50px" height="50px" ></td>
             <td>{{$item->text3}}</td>
-            <td><img src="{{ asset('uploads/'.$item->gambar3) }}" width="50px" height="50px" ></td>
+            <td><img src="{{ asset('uploads/'.$item->gambar) }}" width="50px" height="50px" ></td>
             <td>
-                <a href="{{ route('tengah.edit', $item->id) }}" class="btn btn-info">Edit</a>
+                <a href="{{ route('ringkasan.edit', $item->id) }}" class="btn btn-info">Edit</a>
 
                 <a href="javascript:void(0)" onclick="$(this).find('form').submit()" class="btn btn-danger">
                         <span class="fa fa-trash"></span>
-                        <form action="{{ route('tengah.destroy', $item->id) }}" method="POST">
+                        <form action="{{ route('ringkasan.destroy', $item->id) }}" method="POST">
                              @csrf
                              @method('DELETE')
                         </form>

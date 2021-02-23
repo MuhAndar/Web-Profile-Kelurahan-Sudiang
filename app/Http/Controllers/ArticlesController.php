@@ -88,7 +88,7 @@ class ArticlesController extends Controller
         $articles->update([
             'judul' => \Str::slug($request->judul),
             'body' => $request->body,
-            'gambar' => $request->file('gambar')->store('articles'),
+            'gambar' => $request->file('gambar')->store('articles'),    
             'categories_id' => $request->categories_id
         ]);
         return redirect()->route('articles.index');

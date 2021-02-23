@@ -8,39 +8,31 @@
   <!-- Default box -->
   <div class="box">
     <div class="box-header">
-      <h3 class="box-title">Tambah Data Home Tengah</h3>
+      <h3 class="box-title">Tambah Data Ringkasan</h3>
     </div>
     <!-- /.box-header -->
     <div class="box-body pad">
-      <form action="{{ route('tengah.store') }}" enctype="multipart/form-data" method="POST">
+      <form action="{{ route('ringkasan.store') }}" enctype="multipart/form-data" method="POST">
         @csrf
         <div class="form-group">
-          <label>Judul Artikel</label>
+          <label>Text 1</label>
           <input type="text" class="form-control" name="text1">
         </div>
         <div class="form-group">
-          <label>Gambar</label>
-          <input type="file" class="form-control" name="gambar1">
-        </div>
-        <div class="form-group">
-          <label>Judul Artikel</label>
+          <label>Text 2</label>
           <input type="text" class="form-control" name="text2">
         </div>
         <div class="form-group">
-          <label>Gambar</label>
-          <input type="file" class="form-control" name="gambar2">
-        </div>
-        <div class="form-group">
-          <label>Judul Artikel</label>
+          <label>Text 3</label>
           <input type="text" class="form-control" name="text3">
         </div>
         <div class="form-group">
           <label>Gambar</label>
-          <input type="file" class="form-control" name="gambar3">
+          <input type="file" class="form-control" name="gambar">
         </div>
         <div class="form-group">
           <button type="submit" class="btn btn-primary">Tambah Data</button>
-          <a href="{{ route('tengah.index') }}" class="btn btn-danger">Kembali</a>
+          <a href="{{ route('ringkasan.index') }}" class="btn btn-danger">Kembali</a>
         </div>
       </form>
     </div>

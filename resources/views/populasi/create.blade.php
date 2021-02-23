@@ -8,7 +8,7 @@
       <!-- general form elements -->
       <div class="box box-primary">
         <div class="box-header with-border">
-          <h3 class="box-title">Populasi</h3>
+          <h3 class="box-title">Tambah Data Populasi</h3>
         </div>
         <!-- /.box-header -->
         <!-- form start -->
@@ -35,7 +35,7 @@
           </div>
           <!-- /.box-body -->
           <div class="box-footer">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Tambah Data</button>
             <a href="{{ route('populasi.index') }}" class = "btn btn-danger">Kembali</a>
           </div>
         </form>

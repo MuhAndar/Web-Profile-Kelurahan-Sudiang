@@ -8,7 +8,7 @@
       <!-- general form elements -->
       <div class="box box-primary">
         <div class="box-header with-border">
-          <h3 class="box-title">Edit Populasi</h3>
+          <h3 class="box-title">Edit Data Populasi</h3>
         </div>
         <!-- /.box-header -->
         <!-- form start -->
@@ -18,7 +18,7 @@
             <div class="box-body">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Jumlah Laki-Laki</label>
-                    <input type="text" class="form-control" name="jl" placeholder="Jumlah Laki-Laki"  value="{{ $populasi->jl }}"">
+                    <input type="text" class="form-control" name="jl" placeholder="Jumlah Laki-Laki"  value="{{ $populasi->jl }}">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Jumlah Perempuan</label>
@@ -39,9 +39,8 @@
           </div>
           <!-- /.box-body -->
           <div class="box-footer">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Update Data</button>
             <a href="{{ route('populasi.index') }}" class = "btn btn-danger">Kembali</a>
-
           </div>
         </form>
       </div>
