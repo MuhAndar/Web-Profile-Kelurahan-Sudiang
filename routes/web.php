@@ -29,8 +29,6 @@ Route::resource('categories', 'CategoriesController');
 
 Route::resource('articles', 'ArticlesController');
 
-Route::resource('kontaks', 'KontaksController');
-
 // Home
 
 Route::resource('populasi', 'HomePopulasisController');
@@ -45,6 +43,10 @@ Route::resource('ringkasan', 'RingkasanController');
 
 Route::resource('visimisi', 'VisimisiController');
 
+// Staf
+
+Route::resource('staff', 'StaffController');
+
 // Syarat Pengurusan
 
 Route::resource('sekretaris', 'SKSekretarisController');
@@ -54,5 +56,10 @@ Route::resource('kebersihan', 'KSKebersihanController');
 Route::resource('pemerintahan', 'KSPemerintahanController');
 
 Route::resource('perekonomian', 'KSPerekonomianController');
+
+// Kontak
+
+
+Route::resource('kontaks', 'KontaksController');
 
 });

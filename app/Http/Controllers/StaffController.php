@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Ringkasan;
+use App\Staff;
 use Storage;
 
-class RingkasanController extends Controller
+class StaffController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class RingkasanController extends Controller
      */
     public function index()
     {
-        $ringkasan = Ringkasan::latest()->get();
-        return view('ringkasan.index', compact('ringkasan'));
+        $staff = Staff::latest()->get();
+        return view('staff.index', compact('staff'));
     }
 
     /**
@@ -26,9 +26,7 @@ class RingkasanController extends Controller
      */
     public function create()
     {
-        // $categories = Categories::select('id', 'nama_kategori')->get();
-        
-        return view('ringkasan.create');// compact('categories'));
+        return view('staff.create');
     }
 
     /**
@@ -39,14 +37,15 @@ class RingkasanController extends Controller
      */
     public function store(Request $request)
     {
-        $image = $request->file('gambar')->store('ringkasan');
-        Ringkasan::create([
-            'text1' => $request->text1,
-            'text2' => $request->text2,
-            'text3' => $request->text3,
+        $image = $request->file('gambar')->store('staff');
+        Staff::create([
+            'nama' => $request->nama,
+            'jabatan' => $request->jabatan,
+            'email' => $request->email,
+            'no_telepon' => $request->no_telepon,
             'gambar' => $image,
         ]);
-        return redirect()->route('ringkasan.index');
+        return redirect()->route('staff.index');
     }
 
     /**
@@ -68,8 +67,8 @@ class RingkasanController extends Controller
      */
     public function edit($id)
     {
-        $ringkasan = Ringkasan::find($id);
-        return view('ringkasan.edit', compact('ringkasan'));
+        $staff = Staff::find($id);
+        return view('staff.edit', compact('staff'));
     }
 
     /**
@@ -82,32 +81,35 @@ class RingkasanController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'text1' => 'required',
-            'text2' => 'required',
-            'text3' => 'required',
+            'nama' => 'required',
+            'jabatan' => 'required',
+            'email' => 'required',
+            'no_telepon' => 'required',
             'gambar' => 'mimes:jpeg,bmp,png',
         ]);
 
         if(empty($request->file('gambar'))){
-            $ringkasan = Ringkasan::find($id);
-            $ringkasan->update([
-            'text1' => $request->text1,
-            'text2' => $request->text2,
-            'text3' => $request->text3,
+            $staff = Staff::find($id);
+            $staff->update([
+            'nama' => $request->nama,
+            'jabatan' => $request->jabatan,
+            'email' => $request->email,
+            'no_telepon' => $request->no_telepon,
         ]);
 
         }else{
-            $ringkasan = Ringkasan::find($id);
-            Storage::delete($ringkasan->gambar);
-            $ringkasan->update([
-            'text1' => $request->text1,
-            'text2' => $request->text2,
-            'text3' => $request->text3,
-            'gambar' => $request->file('gambar')->store('ringkasan'),
+            $staff = Staff::find($id);
+            Storage::delete($staff->gambar);
+            $staff->update([
+            'nama' => $request->nama,
+            'jabatan' => $request->jabatan,
+            'email' => $request->email,
+            'no_telepon' => $request->no_telepon,
+            'gambar' => $request->file('gambar')->store('staff'),
             ]);
         }
 
-        return redirect()->route('ringkasan.index');
+        return redirect()->route('staff.index');
     }
 
     /**
@@ -118,13 +120,13 @@ class RingkasanController extends Controller
      */
     public function destroy($id)
     {
-        $ringkasan = Ringkasan::find($id);
-        if (!$ringkasan)
+        $staff = Staff::find($id);
+        if (!$staff)
         {
             return redirect()->back();
         }
-            Storage::delete($ringkasan->gambar);
-            $ringkasan->delete();
-            return redirect()->route('ringkasan.index');
+            Storage::delete($staff->gambar);
+            $staff->delete();
+            return redirect()->route('staff.index');
     }
 }

@@ -100,7 +100,7 @@
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Profil</span>
+            <i class="fa fa-user"></i> <span>Profil</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -112,11 +112,11 @@
           </ul>
         </li>
 
-        <li><a href="{{ route('articles.index') }}"><i class="fa fa-users"></i>Staff</a></li>
+        <li><a href="{{ route('staff.index') }}"><i class="fa fa-users"></i>Staff</a></li>
 
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Syarat Kepengurusan</span>
+            <i class="fa fa-book"></i> <span>Syarat Kepengurusan</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -133,7 +133,7 @@
             {{-- <li><a href="{{ route('categories.index') }}"><i class="fa fa-adjust"></i>Categories</a></li>
             <li><a href="{{ route('articles.index') }}"><i class="fa fa-user"></i>Artikel</a></li>
             <li><a href="{{ route('articles.index') }}"><i class="fa fa-book"></i>Syarat</a></li> --}}
-            <li><a href="{{ route('kontaks.index') }}"><i class="fa fa-phone-square-alt"></i>Kontak</a></li>
+            <li><a href="{{ route('kontaks.index') }}"><i class="fa fa-adjust"></i>Kontak</a></li>
           </li>
       </ul>
     </section>

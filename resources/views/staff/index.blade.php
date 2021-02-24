@@ -3,14 +3,14 @@
 <script src="{{ asset('plugins/datatables/dataTables.bootstrap.css') }}"></script>
 @endpush
   @section('title','Dashboard')
-  @section('page-title','Kontak')
+  @section('page-title','Staff')
   @section('content')
   <!-- Default box -->
   <div class="box">
     <div class="box-header">
-      <h3 class="box-title">Data Kontak</h3>
+      <h3 class="box-title">Data Staff</h3>
       <div class="pull-right">
-          <a href="{{ route('kontaks.create') }}" class="btn btn-info">Tambah Data</a>
+          <a href="{{ route('staff.create') }}" class="btn btn-info">Tambah Data</a>
       </div>
     </div>
     <!-- /.box-header -->
@@ -20,26 +20,28 @@
         <tr>
           <th>No</th>
           <th>Nama</th>
+          <th>Jabatan</th>
           <th>Email</th>
-          <th>Alamat</th>
           <th>Nomor Telepon</th>
+          <th>Gambar</th>
           <th></th>
         </tr>
         </thead>
         <tbody>
-          @foreach ($kontaks as $item)
+          @foreach ($staff as $item)
           <tr>
             <td>{{$loop -> iteration}}</td>
             <td>{{$item->nama}}</td>
+            <td>{{$item->jabatan}}</td>
             <td>{{$item->email}}</td>
-            <td>{{$item->alamat}}</td>
             <td>{{$item->no_telepon}}</td>
+            <td><img src="{{ asset('uploads/'.$item->gambar) }}" width="50px" height="50px" ></td>
             <td>
-                <a href="{{ route('kontaks.edit', $item->id) }}" class="btn btn-info">Edit</a>
+                <a href="{{ route('staff.edit', $item->id) }}" class="btn btn-info">Edit</a>
 
                 <a href="javascript:void(0)" onclick="$(this).find('form').submit()" class="btn btn-danger">
                         <span class="fa fa-trash"></span>
-                        <form action="{{ route('kontaks.destroy', $item->id) }}" method="POST">
+                        <form action="{{ route('staff.destroy', $item->id) }}" method="POST">
                              @csrf
                              @method('DELETE')
                         </form>

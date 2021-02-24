@@ -39,7 +39,7 @@ class KontaksController extends Controller
     {
         Kontaks::create($request->all());
         
-        return redirect()->route('konteks.index');
+        return redirect()->route('kontaks.index');
     }
 
     /**
