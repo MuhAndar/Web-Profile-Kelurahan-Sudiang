@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Profil;
 
 use Illuminate\Http\Request;
-use App\Ringkasan;
+use App\Sambutan;
 use Storage;
 
-class RingkasanController extends Controller
+class SambutanController
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class RingkasanController extends Controller
      */
     public function index()
     {
-        $ringkasan = Ringkasan::latest()->get();
-        return view('ringkasan.index', compact('ringkasan'));
+        $sambutan = Sambutan::latest()->get();
+        return view('sambutan.index', compact('sambutan'));
     }
 
     /**
@@ -28,7 +28,7 @@ class RingkasanController extends Controller
     {
         // $categories = Categories::select('id', 'nama_kategori')->get();
         
-        return view('ringkasan.create');// compact('categories'));
+        return view('sambutan.create');// compact('categories'));
     }
 
     /**
@@ -39,14 +39,17 @@ class RingkasanController extends Controller
      */
     public function store(Request $request)
     {
-        $image = $request->file('gambar')->store('ringkasan');
-        Ringkasan::create([
-            'text1' => $request->text1,
-            'text2' => $request->text2,
-            'text3' => $request->text3,
+        // $this->validate($request, [
+        //     'text' => 'required',
+        //     'gambar' => 'mimes:jpeg,bmp,png',
+        // ]);
+
+        $image = $request->file('gambar')->store('sambutan');
+        Sambutan::create([
+            'text' => $request->text,
             'gambar' => $image,
         ]);
-        return redirect()->route('ringkasan.index');
+        return redirect()->route('sambutan.index');
     }
 
     /**
@@ -68,8 +71,8 @@ class RingkasanController extends Controller
      */
     public function edit($id)
     {
-        $ringkasan = Ringkasan::find($id);
-        return view('ringkasan.edit', compact('ringkasan'));
+        $sambutan = Sambutan::find($id);
+        return view('sambutan.edit', compact('sambutan'));
     }
 
     /**
@@ -82,32 +85,27 @@ class RingkasanController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'text1' => 'required',
-            'text2' => 'required',
-            'text3' => 'required',
+            'text' => 'required',
             'gambar' => 'mimes:jpeg,bmp,png',
         ]);
 
         if(empty($request->file('gambar'))){
-            $ringkasan = Ringkasan::find($id);
-            $ringkasan->update([
-            'text1' => $request->text1,
-            'text2' => $request->text2,
-            'text3' => $request->text3,
+
+            $sambutan = Sambutan::find($id);
+            $sambutan->update([
+            'text' => $request->text,
         ]);
 
         }else{
-            $ringkasan = Ringkasan::find($id);
-            Storage::delete($ringkasan->gambar);
-            $ringkasan->update([
-            'text1' => $request->text1,
-            'text2' => $request->text2,
-            'text3' => $request->text3,
-            'gambar' => $request->file('gambar')->store('ringkasan'),
+            $sambutan = Sambutan::find($id);
+            Storage::delete($sambutan->gambar);
+            $sambutan->update([
+            'text' => $request->text,
+            'gambar' => $request->file('gambar')->store('sambutan'),
             ]);
         }
 
-        return redirect()->route('ringkasan.index');
+        return redirect()->route('sambutan.index');
     }
 
     /**
@@ -118,13 +116,13 @@ class RingkasanController extends Controller
      */
     public function destroy($id)
     {
-        $ringkasan = Ringkasan::find($id);
-        if (!$ringkasan)
+        $sambutan = Sambutan::find($id);
+        if (!$sambutan)
         {
             return redirect()->back();
         }
-            Storage::delete($ringkasan->gambar);
-            $ringkasan->delete();
-            return redirect()->route('ringkasan.index');
+            Storage::delete($sambutan->gambar);
+            $sambutan->delete();
+            return redirect()->route('sambutan.index');
     }
 }

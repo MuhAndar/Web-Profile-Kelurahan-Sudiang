@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Syarat_Pengurusan;
 
 use Illuminate\Http\Request;
-use App\Sekretaris;
+use App\Perekonomian;
 
-class SKSekretarisController extends Controller
+class KSPerekonomianController
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class SKSekretarisController extends Controller
      */
     public function index()
     {
-        $sekretaris = Sekretaris::latest()->get();  
+        $perekonomian = Perekonomian::latest()->get();  
 
-        return view('sekretaris.index', compact('sekretaris'));
+        return view('perekonomian.index', compact('perekonomian'));
     }
 
     /**
@@ -26,7 +26,7 @@ class SKSekretarisController extends Controller
      */
     public function create()
     {
-        return view('sekretaris.create');
+        return view('perekonomian.create');
     }
 
     /**
@@ -37,9 +37,9 @@ class SKSekretarisController extends Controller
      */
     public function store(Request $request)
     {
-        Sekretaris::create($request->all());
+        Perekonomian::create($request->all());
         
-        return redirect()->route('sekretaris.index');
+        return redirect()->route('perekonomian.index');
     }
 
     /**
@@ -61,8 +61,8 @@ class SKSekretarisController extends Controller
      */
     public function edit($id)
     {
-        $sekretaris = Sekretaris::find($id);
-        return view ('sekretaris.edit' , compact('sekretaris'));
+        $perekonomian = Perekonomian::find($id);
+        return view ('perekonomian.edit' , compact('perekonomian'));
     }
 
     /**
@@ -74,9 +74,9 @@ class SKSekretarisController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $sekretaris = Sekretaris::find($id);
-        $sekretaris -> update($request->all());
-        return redirect()->route('sekretaris.index');
+        $perekonomian = Perekonomian::find($id);
+        $perekonomian -> update($request->all());
+        return redirect()->route('perekonomian.index');
     }
 
     /**
@@ -87,11 +87,11 @@ class SKSekretarisController extends Controller
      */
     public function destroy($id)
     {
-        $sekretaris = Sekretaris::find($id);
-        if(!$sekretaris){
+        $perekonomian = Perekonomian::find($id);
+        if(!$perekonomian){
             return redirect()->back();
         }
-        $sekretaris->delete();
-        return redirect()->route('sekretaris.index');
+        $perekonomian->delete();
+        return redirect()->route('perekonomian.index');
     }
 }

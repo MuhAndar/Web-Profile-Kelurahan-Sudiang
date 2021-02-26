@@ -11,14 +11,30 @@
 |
 */
 
-Route::get('/', function () {
+// Front End
+
+Route::get('/', 'PageController@index')->name('index');
+Route::get('/profil/sambutan', 'PageController@sambutan')->name('sambutan');
+Route::get('/profil/ringkasan', 'PageController@ringkasan')->name('ringkasan');
+Route::get('/profil/visimisi', 'PageController@vmts')->name('visimisi');
+Route::get('/staff1', 'PageController@staff1')->name('staff1');
+Route::get('/syaratkepengurusan/sekretaris', 'PageController@sekretaris')->name('sekretaris');
+Route::get('/syaratkepengurusan/kebersihan', 'PageController@sKebersihan')->name('kebersihan');
+Route::get('/syaratkepengurusan/pemerintahan', 'PageController@sPemerintahan')->name('pemerintahan');
+Route::get('/syaratkepengurusan/perekonomian', 'PageController@sPerekonomian')->name('perekonomian');
+Route::get('/kontak', 'PageController@kontak')->name('kontak');
+Route::get('/pkk', 'PageController@pkk')->name('pkk');
+Route::get('/lurah', 'PageController@lurah')->name('lurah');
+Route::get('/kepengurusanberkas', 'PageController@kepengurusanberkas')->name('berkas');
+
+
+// Back end
+
+Route::get('/Admin', function () {
     return view('login');
 });
 
 Auth::routes();
-
-
-// Back end
 
 Route::group(['middleware' => 'auth'], function (){
 
@@ -31,17 +47,19 @@ Route::resource('articles', 'ArticlesController');
 
 // Home
 
-Route::resource('populasi', 'HomePopulasisController');
+Route::resource('populasi', 'Home\HomePopulasisController');
 
-Route::resource('tengah', 'HomeTengahController');
+Route::resource('tengah', 'Home\HomeTengahController');
+
+Route::resource('artikel', 'Home\ArticleController');
 
 // Profil
 
-Route::resource('sambutan', 'SambutanController');
+Route::resource('sambutan', 'Profil\SambutanController');
 
-Route::resource('ringkasan', 'RingkasanController');
+Route::resource('ringkasan', 'Profil\RingkasanController');
 
-Route::resource('visimisi', 'VisimisiController');
+Route::resource('visimisi', 'Profil\VisimisiController');
 
 // Staf
 
@@ -49,13 +67,13 @@ Route::resource('staff', 'StaffController');
 
 // Syarat Pengurusan
 
-Route::resource('sekretaris', 'SKSekretarisController');
+Route::resource('sekretaris', 'Syarat_Pengurusan\SKSekretarisController');
 
-Route::resource('kebersihan', 'KSKebersihanController');
+Route::resource('kebersihan', 'Syarat_Pengurusan\KSKebersihanController');
 
-Route::resource('pemerintahan', 'KSPemerintahanController');
+Route::resource('pemerintahan', 'Syarat_Pengurusan\KSPemerintahanController');
 
-Route::resource('perekonomian', 'KSPerekonomianController');
+Route::resource('perekonomian', 'Syarat_Pengurusan\KSPerekonomianController');
 
 // Kontak
 

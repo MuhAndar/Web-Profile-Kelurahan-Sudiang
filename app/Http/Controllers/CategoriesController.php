@@ -16,7 +16,7 @@ class CategoriesController extends Controller
     {
         $categories = Categories::latest()->get();  
 
-        return view('categories.index', compact('categories'));
+        return view('categories.test.index', compact('categories'));
     }
 
     /**
@@ -26,7 +26,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        return view('categories.create');
+        return view('categories.test.create');
     }
 
     /**
@@ -39,7 +39,7 @@ class CategoriesController extends Controller
     {
         Categories::create($request->all());
         
-        return redirect()->route('categories.index');
+        return redirect()->route('categories.test.index');
     }
 
     /**
@@ -62,7 +62,7 @@ class CategoriesController extends Controller
     public function edit($id)
     {
         $categories = Categories::find($id);
-        return view ('categories.edit' , compact('categories'));
+        return view ('categories.test.edit' , compact('categories'));
     }
 
     /**
@@ -76,7 +76,7 @@ class CategoriesController extends Controller
     {
         $categories = Categories::find($id);
         $categories -> update($request->all());
-        return redirect()->route('categories.index');
+        return redirect()->route('categories.test.index');
     }
 
     /**
@@ -92,6 +92,6 @@ class CategoriesController extends Controller
             return redirect()->back();
         }
         $categories->delete();
-        return redirect()->route('categories.index');
+        return redirect()->route('categories.test.index');
     }
 }

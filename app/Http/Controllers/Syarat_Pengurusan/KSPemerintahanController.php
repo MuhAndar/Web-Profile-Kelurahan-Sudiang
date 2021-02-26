@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Syarat_Pengurusan;
 
 use Illuminate\Http\Request;
-use App\Perekonomian;
+use App\Pemerintahan;
 
-class KSPerekonomianController extends Controller
+class KSPemerintahanController
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class KSPerekonomianController extends Controller
      */
     public function index()
     {
-        $perekonomian = Perekonomian::latest()->get();  
+        $pemerintahan = Pemerintahan::latest()->get();  
 
-        return view('perekonomian.index', compact('perekonomian'));
+        return view('pemerintahan.index', compact('pemerintahan'));
     }
 
     /**
@@ -26,7 +26,7 @@ class KSPerekonomianController extends Controller
      */
     public function create()
     {
-        return view('perekonomian.create');
+        return view('pemerintahan.create');
     }
 
     /**
@@ -37,9 +37,9 @@ class KSPerekonomianController extends Controller
      */
     public function store(Request $request)
     {
-        Perekonomian::create($request->all());
+        Pemerintahan::create($request->all());
         
-        return redirect()->route('perekonomian.index');
+        return redirect()->route('pemerintahan.index');
     }
 
     /**
@@ -61,8 +61,8 @@ class KSPerekonomianController extends Controller
      */
     public function edit($id)
     {
-        $perekonomian = Perekonomian::find($id);
-        return view ('perekonomian.edit' , compact('perekonomian'));
+        $pemerintahan = Pemerintahan::find($id);
+        return view ('pemerintahan.edit' , compact('pemerintahan'));
     }
 
     /**
@@ -74,9 +74,9 @@ class KSPerekonomianController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $perekonomian = Perekonomian::find($id);
-        $perekonomian -> update($request->all());
-        return redirect()->route('perekonomian.index');
+        $pemerintahan = Pemerintahan::find($id);
+        $pemerintahan -> update($request->all());
+        return redirect()->route('pemerintahan.index');
     }
 
     /**
@@ -87,11 +87,11 @@ class KSPerekonomianController extends Controller
      */
     public function destroy($id)
     {
-        $perekonomian = Perekonomian::find($id);
-        if(!$perekonomian){
+        $pemerintahan = Pemerintahan::find($id);
+        if(!$pemerintahan){
             return redirect()->back();
         }
-        $perekonomian->delete();
-        return redirect()->route('perekonomian.index');
+        $pemerintahan->delete();
+        return redirect()->route('pemerintahan.index');
     }
 }

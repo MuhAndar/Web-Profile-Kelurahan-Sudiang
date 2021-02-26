@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Profil;
 
 use Illuminate\Http\Request;
-use App\Sambutan;
+use App\Visimisi;
 use Storage;
 
-class SambutanController extends Controller
+class VisimisiController
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class SambutanController extends Controller
      */
     public function index()
     {
-        $sambutan = Sambutan::latest()->get();
-        return view('sambutan.index', compact('sambutan'));
+        $visimisi = Visimisi::latest()->get();
+        return view('visimisi.index', compact('visimisi'));
     }
 
     /**
@@ -28,7 +28,7 @@ class SambutanController extends Controller
     {
         // $categories = Categories::select('id', 'nama_kategori')->get();
         
-        return view('sambutan.create');// compact('categories'));
+        return view('visimisi.create');// compact('categories'));
     }
 
     /**
@@ -39,17 +39,13 @@ class SambutanController extends Controller
      */
     public function store(Request $request)
     {
-        // $this->validate($request, [
-        //     'text' => 'required',
-        //     'gambar' => 'mimes:jpeg,bmp,png',
-        // ]);
-
-        $image = $request->file('gambar')->store('sambutan');
-        Sambutan::create([
-            'text' => $request->text,
+        $image = $request->file('gambar')->store('visimisi');
+        Visimisi::create([
+            'text1' => $request->text1,
+            'text2' => $request->text2,
             'gambar' => $image,
         ]);
-        return redirect()->route('sambutan.index');
+        return redirect()->route('visimisi.index');
     }
 
     /**
@@ -71,8 +67,8 @@ class SambutanController extends Controller
      */
     public function edit($id)
     {
-        $sambutan = Sambutan::find($id);
-        return view('sambutan.edit', compact('sambutan'));
+        $visimisi = Visimisi::find($id);
+        return view('visimisi.edit', compact('visimisi'));
     }
 
     /**
@@ -85,27 +81,29 @@ class SambutanController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'text' => 'required',
+            'text1' => 'required',
+            'text2' => 'required',
             'gambar' => 'mimes:jpeg,bmp,png',
         ]);
 
         if(empty($request->file('gambar'))){
-
-            $sambutan = Sambutan::find($id);
-            $sambutan->update([
-            'text' => $request->text,
+            $visimisi = Visimisi::find($id);
+            $visimisi->update([
+            'text1' => $request->text1,
+            'text2' => $request->text2,
         ]);
 
         }else{
-            $sambutan = Sambutan::find($id);
-            Storage::delete($sambutan->gambar);
-            $sambutan->update([
-            'text' => $request->text,
-            'gambar' => $request->file('gambar')->store('sambutan'),
+            $visimisi = Visimisi::find($id);
+            Storage::delete($visimisi->gambar);
+            $visimisi->update([
+            'text1' => $request->text1,
+            'text2' => $request->text2,
+            'gambar' => $request->file('gambar')->store('visimisi'),
             ]);
         }
 
-        return redirect()->route('sambutan.index');
+        return redirect()->route('visimisi.index');
     }
 
     /**
@@ -116,13 +114,13 @@ class SambutanController extends Controller
      */
     public function destroy($id)
     {
-        $sambutan = Sambutan::find($id);
-        if (!$sambutan)
+        $visimisi = Visimisi::find($id);
+        if (!$visimisi)
         {
             return redirect()->back();
         }
-            Storage::delete($sambutan->gambar);
-            $sambutan->delete();
-            return redirect()->route('sambutan.index');
+            Storage::delete($visimisi->gambar);
+            $visimisi->delete();
+            return redirect()->route('visimisi.index');
     }
 }

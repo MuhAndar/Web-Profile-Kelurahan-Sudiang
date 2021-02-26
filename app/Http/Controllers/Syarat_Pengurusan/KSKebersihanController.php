@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Syarat_Pengurusan;
 
 use Illuminate\Http\Request;
 use App\Kebersihan;
 
-class KSKebersihanController extends Controller
+class KSKebersihanController
 {
     /**
      * Display a listing of the resource.

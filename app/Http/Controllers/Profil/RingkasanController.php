@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Profil;
 
 use Illuminate\Http\Request;
-use App\Visimisi;
+use App\Ringkasan;
 use Storage;
 
-class VisimisiController extends Controller
+class RingkasanController
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class VisimisiController extends Controller
      */
     public function index()
     {
-        $visimisi = Visimisi::latest()->get();
-        return view('visimisi.index', compact('visimisi'));
+        $ringkasan = Ringkasan::latest()->get();
+        return view('ringkasan.index', compact('ringkasan'));
     }
 
     /**
@@ -28,7 +28,7 @@ class VisimisiController extends Controller
     {
         // $categories = Categories::select('id', 'nama_kategori')->get();
         
-        return view('visimisi.create');// compact('categories'));
+        return view('ringkasan.create');// compact('categories'));
     }
 
     /**
@@ -39,13 +39,14 @@ class VisimisiController extends Controller
      */
     public function store(Request $request)
     {
-        $image = $request->file('gambar')->store('visimisi');
-        Visimisi::create([
+        $image = $request->file('gambar')->store('ringkasan');
+        Ringkasan::create([
             'text1' => $request->text1,
             'text2' => $request->text2,
+            'text3' => $request->text3,
             'gambar' => $image,
         ]);
-        return redirect()->route('visimisi.index');
+        return redirect()->route('ringkasan.index');
     }
 
     /**
@@ -67,8 +68,8 @@ class VisimisiController extends Controller
      */
     public function edit($id)
     {
-        $visimisi = Visimisi::find($id);
-        return view('visimisi.edit', compact('visimisi'));
+        $ringkasan = Ringkasan::find($id);
+        return view('ringkasan.edit', compact('ringkasan'));
     }
 
     /**
@@ -83,27 +84,30 @@ class VisimisiController extends Controller
         $this->validate($request, [
             'text1' => 'required',
             'text2' => 'required',
+            'text3' => 'required',
             'gambar' => 'mimes:jpeg,bmp,png',
         ]);
 
         if(empty($request->file('gambar'))){
-            $visimisi = Visimisi::find($id);
-            $visimisi->update([
+            $ringkasan = Ringkasan::find($id);
+            $ringkasan->update([
             'text1' => $request->text1,
             'text2' => $request->text2,
+            'text3' => $request->text3,
         ]);
 
         }else{
-            $visimisi = Visimisi::find($id);
-            Storage::delete($visimisi->gambar);
-            $visimisi->update([
+            $ringkasan = Ringkasan::find($id);
+            Storage::delete($ringkasan->gambar);
+            $ringkasan->update([
             'text1' => $request->text1,
             'text2' => $request->text2,
-            'gambar' => $request->file('gambar')->store('visimisi'),
+            'text3' => $request->text3,
+            'gambar' => $request->file('gambar')->store('ringkasan'),
             ]);
         }
 
-        return redirect()->route('visimisi.index');
+        return redirect()->route('ringkasan.index');
     }
 
     /**
@@ -114,13 +118,13 @@ class VisimisiController extends Controller
      */
     public function destroy($id)
     {
-        $visimisi = Visimisi::find($id);
-        if (!$visimisi)
+        $ringkasan = Ringkasan::find($id);
+        if (!$ringkasan)
         {
             return redirect()->back();
         }
-            Storage::delete($visimisi->gambar);
-            $visimisi->delete();
-            return redirect()->route('visimisi.index');
+            Storage::delete($ringkasan->gambar);
+            $ringkasan->delete();
+            return redirect()->route('ringkasan.index');
     }
 }

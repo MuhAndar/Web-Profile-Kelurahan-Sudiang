@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Home;
 
 use Illuminate\Http\Request;
 use App\Tengah;
 use Storage;
 
-class HomeTengahController extends Controller
+class HomeTengahController
 {
     /**
      * Display a listing of the resource.

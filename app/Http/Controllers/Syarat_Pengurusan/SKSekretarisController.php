@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Syarat_Pengurusan;
 
 use Illuminate\Http\Request;
-use App\Pemerintahan;
+use App\Sekretaris;
 
-class KSPemerintahanController extends Controller
+class SKSekretarisController
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class KSPemerintahanController extends Controller
      */
     public function index()
     {
-        $pemerintahan = Pemerintahan::latest()->get();  
+        $sekretaris = Sekretaris::latest()->get();  
 
-        return view('pemerintahan.index', compact('pemerintahan'));
+        return view('sekretaris.index', compact('sekretaris'));
     }
 
     /**
@@ -26,7 +26,7 @@ class KSPemerintahanController extends Controller
      */
     public function create()
     {
-        return view('pemerintahan.create');
+        return view('sekretaris.create');
     }
 
     /**
@@ -37,9 +37,9 @@ class KSPemerintahanController extends Controller
      */
     public function store(Request $request)
     {
-        Pemerintahan::create($request->all());
+        Sekretaris::create($request->all());
         
-        return redirect()->route('pemerintahan.index');
+        return redirect()->route('sekretaris.index');
     }
 
     /**
@@ -61,8 +61,8 @@ class KSPemerintahanController extends Controller
      */
     public function edit($id)
     {
-        $pemerintahan = Pemerintahan::find($id);
-        return view ('pemerintahan.edit' , compact('pemerintahan'));
+        $sekretaris = Sekretaris::find($id);
+        return view ('sekretaris.edit' , compact('sekretaris'));
     }
 
     /**
@@ -74,9 +74,9 @@ class KSPemerintahanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pemerintahan = Pemerintahan::find($id);
-        $pemerintahan -> update($request->all());
-        return redirect()->route('pemerintahan.index');
+        $sekretaris = Sekretaris::find($id);
+        $sekretaris -> update($request->all());
+        return redirect()->route('sekretaris.index');
     }
 
     /**
@@ -87,11 +87,11 @@ class KSPemerintahanController extends Controller
      */
     public function destroy($id)
     {
-        $pemerintahan = Pemerintahan::find($id);
-        if(!$pemerintahan){
+        $sekretaris = Sekretaris::find($id);
+        if(!$sekretaris){
             return redirect()->back();
         }
-        $pemerintahan->delete();
-        return redirect()->route('pemerintahan.index');
+        $sekretaris->delete();
+        return redirect()->route('sekretaris.index');
     }
 }
