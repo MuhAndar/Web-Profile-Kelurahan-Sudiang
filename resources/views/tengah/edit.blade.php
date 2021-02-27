@@ -17,7 +17,7 @@
         @method('PUT')
         <div class="form-group">
           <label>Text 1</label>
-          <<input type="text" class="form-control" name="text1" placeholder="Nama"  value="{{ $tengah->text1 }}">
+          <input type="text" class="form-control" name="text1" placeholder="Nama"  value="{{ $tengah->text1 }}">
         </div>
         <div class="form-group">
           <label>Gambar 1</label>

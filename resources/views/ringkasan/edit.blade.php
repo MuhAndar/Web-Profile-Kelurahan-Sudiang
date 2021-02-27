@@ -16,16 +16,28 @@
         @csrf
         @method('PUT')
         <div class="form-group">
-          <label>Text 1</label>
-          <<input type="text" class="form-control" name="text1" placeholder="Nama"  value="{{ $ringkasan->text1 }}">
+          <label>Nama Kelurahan</label>
+          <input type="text" class="form-control" name="nama" value="{{ $ringkasan->nama }}">
         </div>
         <div class="form-group">
-          <label>Text 2</label>
-          <input type="text" value="{{$ringkasan->text2}}" class="form-control" name="text2">
+          <label>Isi Ringkasan</label>
+          <input type="text" value="{{$ringkasan->isi}}" class="form-control" name="isi">
         </div>
         <div class="form-group">
-          <label>Text 3</label>
-          <input type="text" value="{{$ringkasan->text3}}" class="form-control" name="text3">
+          <label>Batas Wilayah Utara</label>
+          <input type="text" value="{{$ringkasan->bwu}}" class="form-control" name="bwu">
+        </div>
+        <div class="form-group">
+          <label>Batas Wilayah Selatan</label>
+          <input type="text" class="form-control" name="bws" value="{{ $ringkasan->bws }}">
+        </div>
+        <div class="form-group">
+          <label>Batas Wilayah Timur</label>
+          <input type="text" value="{{$ringkasan->bwt}}" class="form-control" name="bwt">
+        </div>
+        <div class="form-group">
+          <label>Batas Wilayah Barat</label>
+          <input type="text" value="{{$ringkasan->bwb}}" class="form-control" name="bwb">
         </div>
         <div class="form-group">
           <label>Gambar</label>

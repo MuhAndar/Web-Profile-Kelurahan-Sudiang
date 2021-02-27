@@ -16,14 +16,24 @@
         @csrf
         @method('PUT')
         <div class="form-group">
-          <label>Text</label>
-          <<input type="text" class="form-control" name="text" placeholder="Nama"  value="{{$sambutan->text}}">
+          <label>Nama</label>
+          <input type="text" class="form-control" name="nama" placeholder="Nama"  value="{{$sambutan->nama}}">
+        </div>
+        <div class="form-group">
+          <label>NIK</label>
+          <input type="text" class="form-control" name="nik" placeholder="NIK"  value="{{$sambutan->nik}}">
+        </div>
+        <div class="form-group">
+          <label>Salam</label>
+          <input type="text" class="form-control" name="isi1" placeholder="Salam"  value="{{$sambutan->isi1}}">
+        </div>
+        <div class="form-group">
+          <label>Isi</label>
+          <input type="text" class="form-control" name="isi2" placeholder="Isi"  value="{{$sambutan->isi2}}">
         </div>
         <div class="form-group">
           <label>Gambar</label>
           <input type="file" class="form-control" name="gambar" value="{{$sambutan->gambar}}">
-          {{-- <input type="file" class="custom-file-input" id="gambar" name="gambar" value="{{$sambutan->gambar}}>
-          <label class="custom-file-label" for="image"></label> --}}
         </div>
         <div class="form-group">
           <button type="submit" class="btn btn-primary">Update Data</button>

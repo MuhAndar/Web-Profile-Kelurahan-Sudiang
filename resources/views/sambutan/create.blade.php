@@ -15,8 +15,20 @@
       <form action="{{ route('sambutan.store') }}" enctype="multipart/form-data" method="POST">
         @csrf
         <div class="form-group">
-          <label>Text</label>
-          <input type="text" class="form-control" name="text">
+          <label>Nama</label>
+          <input type="text" class="form-control" name="nama">
+        </div>
+        <div class="form-group">
+          <label>NIK</label>
+          <input type="text" class="form-control" name="nik">
+        </div>
+        <div class="form-group">
+          <label>Salam</label>
+          <input type="text" class="form-control" name="isi1">
+        </div>
+        <div class="form-group">
+          <label>Isi</label>
+          <input type="text" class="form-control" name="isi2">
         </div>
         <div class="form-group">
           <label>Gambar</label>

@@ -93,8 +93,10 @@
             </span>
           </a>
           <ul class="treeview-menu">
+            <li><a href="{{ route('slogan.index') }}"><i class="fa fa-phone-square-alt"></i>Slogan</a></li>
             <li><a href="{{ route('tengah.index') }}"><i class="fa fa-phone-square-alt"></i>Tengah</a></li>
             <li><a href="{{ route('populasi.index') }}"><i class="fa fa-phone-square-alt"></i>Populasi</a></li>
+            <li><a href="{{ route('about.index') }}"><i class="fa fa-phone-square-alt"></i>Tentang Kami</a></li>
           </ul>
         </li>
 

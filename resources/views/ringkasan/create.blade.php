@@ -15,16 +15,28 @@
       <form action="{{ route('ringkasan.store') }}" enctype="multipart/form-data" method="POST">
         @csrf
         <div class="form-group">
-          <label>Text 1</label>
-          <input type="text" class="form-control" name="text1">
+          <label>Nama Kelurahan</label>
+          <input type="text" class="form-control" name="nama">
         </div>
         <div class="form-group">
-          <label>Text 2</label>
-          <input type="text" class="form-control" name="text2">
+          <label>Isi Ringkasan</label>
+          <input type="text" class="form-control" name="isi">
         </div>
         <div class="form-group">
-          <label>Text 3</label>
-          <input type="text" class="form-control" name="text3">
+          <label>Batas Wilayah Utara</label>
+          <input type="text" class="form-control" name="bwu">
+        </div>
+        <div class="form-group">
+          <label>Batas Wilayah Selatan</label>
+          <input type="text" class="form-control" name="bws">
+        </div>
+        <div class="form-group">
+          <label>Batas Wilayah Timur</label>
+          <input type="text" class="form-control" name="bwt">
+        </div>
+        <div class="form-group">
+          <label>Batas Wilayah Barat</label>
+          <input type="text" class="form-control" name="bwb">
         </div>
         <div class="form-group">
           <label>Gambar</label>

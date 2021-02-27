@@ -19,9 +19,12 @@
         <thead>
         <tr>
           <th>No</th>
-          <th>Text 1</th>
-          <th>Text 2</th>
-          <th>Text 3</th>
+          <th>Nama Kelurahan</th>
+          <th>Isi Ringkasan</th>
+          <th>Batas Wilayah Utara</th>
+          <th>Batas Wilayah Selatan</th>
+          <th>Batas Wilayah Timur</th>
+          <th>Batas Wilayah Barat</th>
           <th>Gambar</th>
           <th></th>
         </tr>
@@ -30,9 +33,12 @@
           @foreach ($ringkasan as $item)
           <tr>
             <td>{{$loop -> iteration}}</td>
-            <td>{{$item->text1}}</td>
-            <td>{{$item->text2}}</td>
-            <td>{{$item->text3}}</td>
+            <td>{{$item->nama}}</td>
+            <td>{{$item->isi}}</td>
+            <td>{{$item->bwu}}</td>
+            <td>{{$item->bws}}</td>
+            <td>{{$item->bwt}}</td>
+            <td>{{$item->bwb}}</td>
             <td><img src="{{ asset('uploads/'.$item->gambar) }}" width="50px" height="50px" ></td>
             <td>
                 <a href="{{ route('ringkasan.edit', $item->id) }}" class="btn btn-info">Edit</a>

@@ -13,7 +13,7 @@
 
 // Front End
 
-Route::get('/', 'PageController@index')->name('index');
+Route::get('/', 'PageController@index', 'PageController')->name('index');
 Route::get('/profil/sambutan', 'PageController@sambutan')->name('sambutan');
 Route::get('/profil/ringkasan', 'PageController@ringkasan')->name('ringkasan');
 Route::get('/profil/visimisi', 'PageController@vmts')->name('visimisi');
@@ -22,7 +22,7 @@ Route::get('/syaratkepengurusan/sekretaris', 'PageController@sekretaris')->name(
 Route::get('/syaratkepengurusan/kebersihan', 'PageController@sKebersihan')->name('kebersihan');
 Route::get('/syaratkepengurusan/pemerintahan', 'PageController@sPemerintahan')->name('pemerintahan');
 Route::get('/syaratkepengurusan/perekonomian', 'PageController@sPerekonomian')->name('perekonomian');
-Route::get('/kontak', 'PageController@kontak')->name('kontak');
+Route::get('/kontak', 'FrontKontakController@kontak')->name('kontak');
 Route::get('/pkk', 'PageController@pkk')->name('pkk');
 Route::get('/lurah', 'PageController@lurah')->name('lurah');
 Route::get('/kepengurusanberkas', 'PageController@kepengurusanberkas')->name('berkas');
@@ -47,19 +47,23 @@ Route::resource('articles', 'ArticlesController');
 
 // Home
 
-Route::resource('populasi', 'Home\HomePopulasisController');
+Route::resource('populasi', 'HomePopulasisController');
 
-Route::resource('tengah', 'Home\HomeTengahController');
+Route::resource('tengah', 'HomeTengahController');
 
-Route::resource('artikel', 'Home\ArticleController');
+Route::resource('artikel', 'ArticleController');
+
+Route::resource('slogan', 'HomeSloganController');
+
+Route::resource('about', 'HomeAboutController');
 
 // Profil
 
-Route::resource('sambutan', 'Profil\SambutanController');
+Route::resource('sambutan', 'SambutanController');
 
-Route::resource('ringkasan', 'Profil\RingkasanController');
+Route::resource('ringkasan', 'RingkasanController');
 
-Route::resource('visimisi', 'Profil\VisimisiController');
+Route::resource('visimisi', 'VisimisiController');
 
 // Staf
 

@@ -3,12 +3,12 @@
   <link rel="stylesheet" href="{{ asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}">
   @endpush
   @section('title','Dahboard')
-  @section('page-title','Edit Sambutan')
+  @section('page-title','Edit Visi Misi')
   @section('content')
   <!-- Default box -->
   <div class="box">
     <div class="box-header">
-      <h3 class="box-title">Edit Data Sambutan</h3>
+      <h3 class="box-title">Edit Data Visi Misi</h3>
     </div>
     <!-- /.box-header -->
     <div class="box-body pad">
@@ -17,11 +17,11 @@
         @method('PUT')
         <div class="form-group">
           <label>Text 1</label>
-          <<input type="text" class="form-control" name="text1" placeholder="Nama"  value="{{$visimisi->text1}}">
+          <input type="text" class="form-control" name="text1" placeholder="Nama"  value="{{$visimisi->text1}}">
         </div>
         <div class="form-group">
           <label>Text 2</label>
-          <<input type="text" class="form-control" name="text2" placeholder="Nama"  value="{{$visimisi->text2}}">
+          <input type="text" class="form-control" name="text2" placeholder="Nama"  value="{{$visimisi->text2}}">
         </div>
         <div class="form-group">
           <label>Gambar</label>

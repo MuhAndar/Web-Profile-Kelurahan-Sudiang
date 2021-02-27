@@ -17,19 +17,19 @@
         @method('PUT')
         <div class="form-group">
           <label>Nama</label>
-          <<input type="text" class="form-control" name="nama" placeholder="Nama"  value="{{$staff->nama}}">
+          <input type="text" class="form-control" name="nama" placeholder="Nama"  value="{{$staff->nama}}">
         </div>
         <div class="form-group">
           <label>Jabatan</label>
-          <<input type="text" class="form-control" name="jabatan" placeholder="Jabatan"  value="{{$staff->jabatan}}">
+          <input type="text" class="form-control" name="jabatan" placeholder="Jabatan"  value="{{$staff->jabatan}}">
         </div>
         <div class="form-group">
           <label>Email</label>
-          <<input type="text" class="form-control" name="email" placeholder="Email"  value="{{$staff->email}}">
+          <input type="text" class="form-control" name="email" placeholder="Email"  value="{{$staff->email}}">
         </div>
         <div class="form-group">
           <label>Nomor Telepon</label>
-          <<input type="text" class="form-control" name="no_telepon" placeholder="Nomor Telepon"  value="{{$staff->no_telepon}}">
+          <input type="text" class="form-control" name="no_telepon" placeholder="Nomor Telepon"  value="{{$staff->no_telepon}}">
         </div>
         <div class="form-group">
           <label>Gambar</label>

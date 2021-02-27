@@ -21,8 +21,8 @@
           <th>No</th>
           <th>Nama</th>
           <th>Email</th>
-          <th>Alamat</th>
-          <th>Nomor Telepon</th>
+          <th>Subjek</th>
+          <th>Pesan/Saran</th>
           <th></th>
         </tr>
         </thead>
@@ -32,8 +32,8 @@
             <td>{{$loop -> iteration}}</td>
             <td>{{$item->nama}}</td>
             <td>{{$item->email}}</td>
-            <td>{{$item->alamat}}</td>
-            <td>{{$item->no_telepon}}</td>
+            <td>{{$item->subjek}}</td>
+            <td>{{$item->pesan}}</td>
             <td>
                 <a href="{{ route('kontaks.edit', $item->id) }}" class="btn btn-info">Edit</a>
 

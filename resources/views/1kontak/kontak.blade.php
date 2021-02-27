@@ -36,6 +36,25 @@
                 </div>
             </div>
             <div class="col-lg-6 mt-lg-0 mt-5 contact-right">
+                {{-- <form action="{{ route('kontak.store') }}" enctype="multipart/form-data" method="POST">
+                    @csrf
+                    <div class="form-group">
+                      <label>Nama</label>
+                      <input type="text" class="form-control" name="nama">
+                    </div>
+                    <div class="form-group">
+                      <label>Email</label>
+                      <input type="text" class="form-control" name="email">
+                    </div>
+                    <div class="form-group">
+                      <label>Subjek</label>
+                      <input type="text" class="form-control" name="subjek">
+                    </div>
+                    <div class="form-group">
+                      <label>Pesan</label>
+                      <input type="text" class="form-control" name="pesan">
+                    </div>
+                --}}
                 <form action="https://sendmail.w3layouts.com/submitForm" method="post" class="signin-form">
                 <div class="input-grids">
                     <div class="form-group">
@@ -56,6 +75,25 @@
                 </div>
                 </form>
             </div>
+
+            {{-- <div class="col-lg-6 mt-lg-0 mt-5 contact-right">
+                <form action="{{ route('kontaks.store') }}" enctype="multipart/form-data" method="POST">
+                @csrf
+                <div class="input-grids">
+                    <div class="form-group">
+                    <input type="text" name="nama" placeholder="Nama*" class="contact-input" />
+                    </div>
+                    <div class="form-group">
+                    <input type="email" name="email" placeholder="Email*" class="contact-input" required="" />
+                    </div>
+                    <div class="form-group">
+                    <input type="text" name="subjek" placeholder="Subjek" class="contact-input" />
+                    </div>
+                    <div class="form-group">
+                    <input type="text" name="pesan" placeholder="Pesan dan Saran yang ingin disampaikan*" class="contact-input" />
+                    </div>
+                </div>
+            </div> --}}
     
             </div>
             <div class="map mt-5 pt-md-5">

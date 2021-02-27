@@ -11,19 +11,21 @@
                 </div>
             <div class="aboutgrids row">
                 <div class="col-lg-6 aboutgrid1">
-                    <h4>Kelurahan Sudiang</h4>
-                    <p>Sudiang adalah kelurahan yang berada di Biringkanaya, Makassar, Sulawesi Selatan, Indonesia. Kelurahan ini berdiri pada tanggal 9 November 1972. Sudiang memiliki 61 RT dan 21 RW dengan luas wilayah 805 Ha. </p>
+                    @foreach ($ringkasan as $item)
+                    <h4>{{$item->nama}}</h4>
+                    <p>{{$item->isi}} </p>
                     <ul class="services-list mb-5">
                     <h5>Batas Wilayah</h5>
                     <hr>
-                    <li>Utara   : Kabupaten Maros</li>
-                    <li>Selatan : Kelurahan Pai</li>
-                    <li>Timur   : Kelurahan Bakung</li>
-                    <li>Barat   : Kelurahan Bulurokeng dan Kabupaten Maros</li>          
+                    <li>Utara   : {{$item->bwu}}</li>
+                    <li>Selatan : {{$item->bws}}</li>
+                    <li>Timur   : {{$item->bwt}}</li>
+                    <li>Barat   : {{$item->bwb}}</li>          
                     </ul>
+                    @endforeach
                 </div>
                 <div class="col-lg-6 aboutgrid2 mt-lg-0 mt-5">
-                    <img src="{{ asset('images/ringkasan.jpg')}}" alt="ringkasan image" class="img-fluid" />
+                    <img src="{{ asset('uploads/'.$item->gambar)}}" alt="ringkasan image" class="img-fluid" />
                 </div>
             </div>
         </div>

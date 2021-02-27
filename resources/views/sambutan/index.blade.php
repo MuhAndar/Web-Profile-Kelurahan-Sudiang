@@ -19,7 +19,10 @@
         <thead>
         <tr>
           <th>No</th>
-          <th>Text</th>
+          <th>Nama</th>
+          <th>NIK</th>
+          <th>Salam</th>
+          <th>Isi</th>
           <th>Gambar</th>
           <th></th>
         </tr>
@@ -28,7 +31,10 @@
           @foreach ($sambutan as $item)
           <tr>
             <td>{{$loop -> iteration}}</td>
-            <td>{{$item->text}}</td>
+            <td>{{$item->nama}}</td>
+            <td>{{$item->nik}}</td>
+            <td>{{$item->isi1}}</td>
+            <td>{{$item->isi2}}</td>
             <td><img src="{{ asset('uploads/'.$item->gambar) }}" width="50px" height="50px" ></td>
             <td>
                 <a href="{{ route('sambutan.edit', $item->id) }}" class="btn btn-info">Edit</a>

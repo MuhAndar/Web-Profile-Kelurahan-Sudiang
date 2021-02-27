@@ -17,19 +17,19 @@
         @method('PUT')
         <div class="form-group">
           <label>Nama</label>
-          <<input type="text" class="form-control" name="nama" placeholder="Nama"  value="{{$kontaks->nama}}">
+          <input type="text" class="form-control" name="nama" placeholder="Nama"  value="{{$kontaks->nama}}">
         </div>
         <div class="form-group">
           <label>Email</label>
-          <<input type="text" class="form-control" name="email" placeholder="Email"  value="{{$kontaks->email}}">
+          <input type="text" class="form-control" name="email" placeholder="Email"  value="{{$kontaks->email}}">
         </div>
         <div class="form-group">
-          <label>Alamat</label>
-          <<input type="text" class="form-control" name="alamat" placeholder="Alamat"  value="{{$kontaks->alamat}}">
+          <label>Subjek</label>
+          <input type="text" class="form-control" name="subjek" placeholder="Subjek pesan"  value="{{$kontaks->subjuk}}">
         </div>
         <div class="form-group">
-          <label>Nomor Telepon</label>
-          <<input type="text" class="form-control" name="no_telepon" placeholder="Nomor Telepon"  value="{{$kontaks->no_telepon}}">
+          <label>Pesan dan Saran</label>
+          <input type="text" class="form-control" name="pesan" placeholder="Pesan dan Saran yang ingin disampaikan"  value="{{$kontaks->pesan}}">
         </div>
         <div class="form-group">
           <button type="submit" class="btn btn-primary">Update Data</button>

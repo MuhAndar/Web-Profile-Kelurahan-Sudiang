@@ -12,10 +12,12 @@
                 <div class="row">
                   <div class="col-3">
                     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                      <a class="nav-link active" id="v-pills-deskripsi-tab" data-toggle="pill" href="#v-pills-deskripsi" role="tab" aria-controls="v-pills-deskripsi" aria-selected="true">Deskripsi</a>
-                      <a class="nav-link" id="v-pills-proker-tab" data-toggle="pill" href="#v-pills-proker" role="tab" aria-controls="v-pills-proker" aria-selected="false">Progam Kerja</a>
+                      @foreach ($kontaks as $item)
+                      <a class="nav-link active" id="v-pills-deskripsi-tab" data-toggle="pill" href="#v-pills-deskripsi" role="tab" aria-controls="v-pills-deskripsi" aria-selected="true">{{$item->nama}}</a>
+                      {{-- <a class="nav-link" id="v-pills-proker-tab" data-toggle="pill" href="#v-pills-proker" role="tab" aria-controls="v-pills-proker" aria-selected="false">Progam Kerja</a>
                       <a class="nav-link" id="v-pills-tim-tab" data-toggle="pill" href="#v-pills-tim" role="tab" aria-controls="v-pills-tim" aria-selected="false">Tim Penggerak</a>
-                      <a class="nav-link" id="v-pills-galeri-tab" data-toggle="pill" href="#v-pills-galeri" role="tab" aria-controls="v-pills-galeri" aria-selected="false">Galeri</a>
+                      <a class="nav-link" id="v-pills-galeri-tab" data-toggle="pill" href="#v-pills-galeri" role="tab" aria-controls="v-pills-galeri" aria-selected="false">Galeri</a> --}}
+                      @endforeach
                     </div>
                   </div>
                   <div class="col">

@@ -108,21 +108,23 @@
     <div class="footer-29 py-5">
         <div class="container pb-lg-3">
             <div class="row footer-top-29">
+                @foreach ($about as $item)
                 <div class="col-lg-3 col-md-6 footer-list-29 footer-1 mt-md-4"> 
                     <h6 class="footer-logo"><a class="footer-logo mb-md-3 mb-2" href="#url"><img src="{{ asset('images/logo-sulsel.png')}}" alt="" /></a></h6>
                 </div>
                 <div class="col-lg-6 col-md-6 footer-list-29 footer-1 mt-md-5">
-                    <h6 class="footer-logo"><a class="footer-logo mb-md-3 mb-2" href="#url"><alt="" />Kelurahan Sudiang</a></h6>
-                    <p>Sudiang adalah kelurahan yang berada di Biringkanaya, Makassar, Sulawesi Selatan, Indonesia. Sudiang memiliki 61 RT dan 12 RW.</p>
+                    <h6 class="footer-logo"><a class="footer-logo mb-md-3 mb-2" href="#url"><alt="" />{{$item->text1}}</a></h6>
+            <p>{{$item->text2}}</p>
                 </div>
                 <div class="col-lg-3 col-md-6 footer-list-29 footer-4 mt-5">
-                    <h6 class="footer-title-29">Tentang Kami</h6>
+                    <h6 class="footer-title-29">{{$item->text3}}</h6>
                     <ul>
-                        <li><a>Kode Kemendagri: 73.71.11.1005</a></li>
-                        <li><a>Kode Pos: 90242</a></li>
-                        <li><a>Luas: 805 Ha</a></li>
+                        <li><a>Kode Kemendagri: {{$item->text4}}</a></li>
+                        <li><a>Kode Pos: {{$item->text5}}</a></li>
+                        <li><a>Luas: {{$item->text6}}</a></li>
                     </ul>
                 </div>
+                @endforeach
             </div>
         </div>
     </div>

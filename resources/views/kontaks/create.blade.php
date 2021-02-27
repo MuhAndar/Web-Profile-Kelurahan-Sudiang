@@ -23,12 +23,12 @@
           <input type="text" class="form-control" name="email">
         </div>
         <div class="form-group">
-          <label>Alamat</label>
-          <input type="text" class="form-control" name="alamat">
+          <label>Subjek</label>
+          <input type="text" class="form-control" name="subjek">
         </div>
         <div class="form-group">
-          <label>Nomor Telepon</label>
-          <input type="text" class="form-control" name="no_telepon">
+          <label>Pesan</label>
+          <input type="text" class="form-control" name="pesan">
         </div>
         <div class="form-group">
           <button type="submit" class="btn btn-primary">Tambah Data</button>
