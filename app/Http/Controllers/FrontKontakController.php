@@ -13,7 +13,7 @@ class FrontKontakController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function kontak()
+    public function index()
     {
         $about = About::all();
         return view('1kontak.kontak' ,compact('about'));
@@ -30,8 +30,8 @@ class FrontKontakController extends Controller
     public function create()
     {
         // $kontaks = Kontaks::latest()->get();
- 
-        return view('1kontak.kontak' ,compact('kontaks'));  
+        $about = About::all();
+        return view('1kontak.kontak' ,compact('kontak', 'about'));  
     }
 
     /**
@@ -42,9 +42,11 @@ class FrontKontakController extends Controller
      */
     public function store(Request $request)
     {
+        $about = About::all();
         Kontaks::create($request->all());
         
-        return redirect()->route('1kontak.kontak');
+        return view('1kontak.kontak' ,compact('about'));  
+        // return redirect()->route('1kontak.kontak');
     }
 
     /**

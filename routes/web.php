@@ -22,7 +22,8 @@ Route::get('/syaratkepengurusan/sekretaris', 'PageController@sekretaris')->name(
 Route::get('/syaratkepengurusan/kebersihan', 'PageController@sKebersihan')->name('kebersihan');
 Route::get('/syaratkepengurusan/pemerintahan', 'PageController@sPemerintahan')->name('pemerintahan');
 Route::get('/syaratkepengurusan/perekonomian', 'PageController@sPerekonomian')->name('perekonomian');
-Route::get('/kontak', 'FrontKontakController@kontak')->name('kontak');
+// Route::get('/kontak', 'FrontKontakController@kontak')->name('kontak');
+Route::resource('kontak', 'FrontKontakController');
 Route::get('/pkk', 'PageController@pkk')->name('pkk');
 Route::get('/lurah', 'PageController@lurah')->name('lurah');
 Route::get('/kepengurusanberkas', 'PageController@kepengurusanberkas')->name('berkas');

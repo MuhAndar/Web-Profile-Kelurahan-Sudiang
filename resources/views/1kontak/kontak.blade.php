@@ -25,18 +25,22 @@
                     example@mail.com</a></p>
                     <!-- <p> <a href="mailto:support@mail.com">
                     support@mail.com</a></p> -->
-                    <h6 class="mt-4">Alamat:</h6>
-                    <p>Jl. Pendidikan, Sudiang, Kec. Biringkanaya, Kota Makassar, Sulawesi Selatan, 90242, Indonesia</p>
-                    <h6 class="mt-4">Telepon:</h6>
-                    <p class="margin-top"><a href="tel:(0411) 554833">
+                    <h6 class="mt-4">Subjek:</h6>
+                    <p>Bagian Pengurusan KK</p>
+                    {{-- <h6 class="mt-4">Alamat:</h6>
+                    <p>Jl. Pendidikan, Sudiang, Kec. Biringkanaya, Kota Makassar, Sulawesi Selatan, 90242, Indonesia</p> --}}
+                    <h6 class="mt-4">Pesan:</h6>
+                    <p>Staffnya cantik-cantik</p>
+                    {{-- <p class="margin-top"><a href="tel:(0411) 554833">
                         (0411) 554833 </a></p>
                     <p class="margin-top"><a href="08**********">
-                        08********** </a></p>
+                        08********** </a></p> --}}
                 </div>
                 </div>
             </div>
-            <div class="col-lg-6 mt-lg-0 mt-5 contact-right">
-                {{-- <form action="{{ route('kontak.store') }}" enctype="multipart/form-data" method="POST">
+
+            {{-- <div class="col-lg-6 mt-lg-0 mt-5 contact-right">
+                <form action="{{ route('kontak.store') }}" enctype="multipart/form-data" method="POST">
                     @csrf
                     <div class="form-group">
                       <label>Nama</label>
@@ -53,9 +57,9 @@
                     <div class="form-group">
                       <label>Pesan</label>
                       <input type="text" class="form-control" name="pesan">
-                    </div>
-                --}}
-                <form action="https://sendmail.w3layouts.com/submitForm" method="post" class="signin-form">
+                    </div> --}}
+               
+                {{-- <form action="https://sendmail.w3layouts.com/submitForm" method="post" class="signin-form">
                 <div class="input-grids">
                     <div class="form-group">
                     <input type="text" name="w3lName" id="w3lName" placeholder="Nama*" class="contact-input" />
@@ -72,12 +76,13 @@
                 </div>
                 <div class="text-right">
                     <button class="btn btn-primary theme-button">Kirim</button>
+                    <a href="{{ route('kontak.index') }}" class="btn btn-danger">Kembali</a>
                 </div>
                 </form>
-            </div>
+            </div> --}}
 
-            {{-- <div class="col-lg-6 mt-lg-0 mt-5 contact-right">
-                <form action="{{ route('kontaks.store') }}" enctype="multipart/form-data" method="POST">
+            <div class="col-lg-6 mt-lg-0 mt-5 contact-right">
+                <form action="{{ route('kontak.store') }}" enctype="multipart/form-data" method="POST">
                 @csrf
                 <div class="input-grids">
                     <div class="form-group">
@@ -87,14 +92,18 @@
                     <input type="email" name="email" placeholder="Email*" class="contact-input" required="" />
                     </div>
                     <div class="form-group">
-                    <input type="text" name="subjek" placeholder="Subjek" class="contact-input" />
-                    </div>
-                    <div class="form-group">
-                    <input type="text" name="pesan" placeholder="Pesan dan Saran yang ingin disampaikan*" class="contact-input" />
+                    <input type="text" name="subjek" placeholder="Subjek*" class="contact-input" />
                     </div>
                 </div>
-            </div> --}}
-    
+                <div class="form-group">
+                    <textarea name="pesan" placeholder="Isi Pesan Disini*" required=""></textarea>
+                </div>
+                <div class="text-right">
+                    <button class="btn btn-primary theme-button">Kirim</button>
+                </div>
+                </form>
+            </div>
+            
             </div>
             <div class="map mt-5 pt-md-5">
             <h5>Lokasi Kami</h5>

@@ -166,12 +166,12 @@ class PageController extends Controller
                     'perekonomian10', 'perekonomian11', 'perekonomian12', 'perekonomian13', 'perekonomian14',  'about'));
     }
 
-    public function kontak()
-    {
-        // Kontaks::create($request->all());
-        $about = About::all();
-        return view('1kontak.kontak' ,compact('about'));
-    }
+    // public function kontak()
+    // {
+    //     // Kontaks::create($request->all());
+    //     $about = About::all();
+    //     return view('1kontak.kontak' ,compact('about'));
+    // }
 
     public function pkk()
     {

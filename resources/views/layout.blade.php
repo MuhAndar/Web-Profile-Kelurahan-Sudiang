@@ -92,7 +92,7 @@
                                 </div>
                             </li>
 							<li class="nav-item {{ Request::is('kontak') ? 'active' : '' }} @@kontak-active">
-								<a class="nav-link" href="{{ route('kontak') }}">Kontak</a>
+								<a class="nav-link" href="{{ route('kontak.index') }}">Kontak</a>
 							</li>
 						</ul>
 					</div>
