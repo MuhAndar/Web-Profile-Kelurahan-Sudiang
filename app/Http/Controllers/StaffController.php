@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Http\Request;
 use App\Staff;
 use Storage;
@@ -37,13 +38,30 @@ class StaffController extends Controller
      */
     public function store(Request $request)
     {
-        $image = $request->file('gambar')->store('staff');
+        // $image = $request->file('gambar')->store('staff');
+        // $image       = $request->file('gambar');
+        // $filename    = $image->getClientOriginalName();
+
+        // $path = 'public/uploads/staff/' .$filename;
+        // $path = $request->file('gambar')->store('uploads/staff', 'public');
+        // Image::make(storage_path($path))->resize(150,150)->save();
+        // $image_resize->save(public_path('uploads/staff/' .$filename));
+
+        $image       = $request->file('gambar');
+        $filename    = $image->getClientOriginalName();
+
+        $image_resize = Image::make($image->getRealPath());              
+        $image_resize->resize(200, 200);
+        $path = public_path('uploads/staff/' .$filename);
+        $image_resize->save($path);
+        $pathe = 'staff/'.$filename;
         Staff::create([
             'nama' => $request->nama,
             'jabatan' => $request->jabatan,
             'email' => $request->email,
             'no_telepon' => $request->no_telepon,
-            'gambar' => $image,
+            'gambar' => $pathe, 
+          
         ]);
         return redirect()->route('staff.index');
     }
@@ -100,12 +118,22 @@ class StaffController extends Controller
         }else{
             $staff = Staff::find($id);
             Storage::delete($staff->gambar);
+            
+            $image       = $request->file('gambar');
+            $filename    = $image->getClientOriginalName();
+
+            $image_resize = Image::make($image->getRealPath());              
+            $image_resize->resize(200, 200);
+            $path = public_path('uploads/staff/' .$filename);
+            $image_resize->save($path);
+            $pathe = 'staff/'.$filename;
             $staff->update([
             'nama' => $request->nama,
             'jabatan' => $request->jabatan,
             'email' => $request->email,
             'no_telepon' => $request->no_telepon,
-            'gambar' => $request->file('gambar')->store('staff'),
+            'gambar' => $pathe
+            // 'gambar' => $request->file('gambar')->store('staff'),
             ]);
         }
 

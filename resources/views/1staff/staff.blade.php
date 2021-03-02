@@ -21,15 +21,24 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($staff as $item)
                         <tr>
-                            <th scope="row">1</th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>{{$loop -> iteration}}</td>
+                            {{-- <td>{{$item->gambar}}</td> --}}
+                            <td>
+                            <img src="{{ asset('uploads/'.$item->gambar)}}" class="img-fluid testimonial-img" alt="client image">
+                            </td>
+                            {{-- <div class="col-lg-6 aboutgrid2 mt-lg-0 mt-5">
+                                <td>
+                                <img src="{{ asset('uploads/'.$item->gambar)}}" alt="staff image" class="img-fluid" />
+                                </td> --}}
+                            </div>  
+                            <td>{{$item->nama}}</td>
+                            <td>{{$item->jabatan}}</td>
+                            <td>{{$item->email}}</td>
+                            <td>{{$item->no_telepon}}</td>
                         </tr>
-                        <tr>
+                        {{-- <tr>
                             <th scope="row">2</th>
                             <td></td>
                             <td></td>
@@ -44,7 +53,8 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                        </tr>
+                        </tr> --}}
+                        @endforeach
                     </tbody>
                 </table>
             </div>

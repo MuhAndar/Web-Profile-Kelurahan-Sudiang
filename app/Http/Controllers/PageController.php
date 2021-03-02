@@ -15,6 +15,7 @@ use App\About;
 use App\Visimisi;
 use App\Sambutan;
 use App\Ringkasan;
+use App\Staff;
 
 class PageController extends Controller
 {
@@ -100,7 +101,9 @@ class PageController extends Controller
 
     public function staff1()
     {
-        return view('1staff.staff');
+        $about = About::all();
+        $staff = Staff::all();
+        return view('1staff.staff' ,compact('about', 'staff'));
     }
 
     public function sekretaris()
