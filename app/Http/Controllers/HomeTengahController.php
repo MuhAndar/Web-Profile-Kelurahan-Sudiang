@@ -101,37 +101,125 @@ class HomeTengahController extends Controller
     //     return redirect()->route('tengah.index');
     // }
 
+    // {
+    //     $this->validate($request, [
+    //         'text1' => 'required',
+    //         'gambar1' => 'mimes:jpeg,bmp,png',
+    //         'text2' => 'required',
+    //         'gambar2' => 'mimes:jpeg,bmp,png',
+    //         'text3' => 'required',
+    //         'gambar3' => 'mimes:jpeg,bmp,png',
+    //     ]);
+
+    //     if(empty($request->file('gambar'))){
+
+    //         $tengah = Tengah::find($id);
+    //         $tengah->update([
+    //         'text1' => $request->text1,
+    //         'text2' => $request->text2,
+    //         'text3' => $request->text3,
+    //     ]);
+
+    //     }else{
+    //         $tengah = Tengah::find($id);
+    //         Storage::delete($tengah->gambar1);
+    //         Storage::delete($tengah->gambar2);
+    //         Storage::delete($tengah->gambar3);
+    //         $tengah->update([
+    //         'text1' => $request->text1,
+    //         'gambar1' => $request->file('gambar1')->store('tengah'),
+    //         'text2' => $request->text2,
+    //         'gambar2' => $request->file('gambar2')->store('tengah'),
+    //         'text3' => $request->text3,
+    //         'gambar3' => $request->file('gambar3')->store('tengah'),
+    //         ]);
+    //     }
+
     {
-        $this->validate($request, [
+            $this->validate($request, [
             'text1' => 'required',
             'gambar1' => 'mimes:jpeg,bmp,png',
             'text2' => 'required',
             'gambar2' => 'mimes:jpeg,bmp,png',
             'text3' => 'required',
             'gambar3' => 'mimes:jpeg,bmp,png',
-        ]);
+            ]);
+    
+            if(empty($request->file('gambar1'))){
+                $tengah = Tengah::find($id);
+                $tengah->update([
+                'text1' => $request->text1,
+                'text2' => $request->text2,
+                'text3' => $request->text3,
+            ]);
+    
+            }else{
+                $tengah = Tengah::find($id);
+                Storage::delete($tengah->gambar1);
+                // Storage::delete($tengah->gambar2);
+                // Storage::delete($tengah->gambar3);
+                $image1 = $request->file('gambar1')->store('tengah');
+                // $image2 = $request->file('gambar2')->store('tengah');
+                // $image3 = $request->file('gambar3')->store('tengah');
+                $tengah->update([
+                'text1' => $request->text1,
+                'gambar1' => $image1,
+                'text2' => $request->text2,
+                // 'gambar2' => $image2,
+                'text3' => $request->text3,
+                // 'gambar3' => $image3,
+                ]);
+            }
 
-        if(empty($request->file('gambar'))){
+            if(empty($request->file('gambar2'))){
+                $tengah = Tengah::find($id);
+                $tengah->update([
+                'text1' => $request->text1,
+                'text2' => $request->text2,
+                'text3' => $request->text3,
+                ]);
 
-            $tengah = Tengah::find($id);
-            $tengah->update([
-            'text1' => $request->text1,
-            'text2' => $request->text2,
-            'text3' => $request->text3,
-        ]);
+            }else{
+                $tengah = Tengah::find($id);
+                // Storage::delete($tengah->gambar1);
+                Storage::delete($tengah->gambar2);
+                // Storage::delete($tengah->gambar3);
+                // $image1 = $request->file('gambar1')->store('tengah');
+                $image2 = $request->file('gambar2')->store('tengah');
+                // $image3 = $request->file('gambar3')->store('tengah');
+                $tengah->update([
+                'text1' => $request->text1,
+                // 'gambar1' => $image1,
+                'text2' => $request->text2,
+                'gambar2' => $image2,
+                'text3' => $request->text3,
+                // 'gambar3' => $image3,
+                ]);
+            }
+
+            if(empty($request->file('gambar3'))){
+                $tengah = Tengah::find($id);
+                $tengah->update([
+                'text1' => $request->text1,
+                'text2' => $request->text2,
+                'text3' => $request->text3,
+            ]);
 
         }else{
             $tengah = Tengah::find($id);
-            Storage::delete($tengah->gambar1);
-            Storage::delete($tengah->gambar2);
+            // Storage::delete($tengah->gambar1);
+            // Storage::delete($tengah->gambar2);
             Storage::delete($tengah->gambar3);
+            // $image1 = $request->file('gambar1')->store('tengah');
+            // $image2 = $request->file('gambar2')->store('tengah');
+            $image3 = $request->file('gambar3')->store('tengah');
             $tengah->update([
             'text1' => $request->text1,
-            'gambar1' => $request->file('gambar1')->store('tengah'),
+            // 'gambar1' => $image1,
             'text2' => $request->text2,
-            'gambar2' => $request->file('gambar2')->store('tengah'),
+            // 'gambar2' => $image2,
             'text3' => $request->text3,
-            'gambar3' => $request->file('gambar3')->store('tengah'),
+            'gambar3' => $image3,
             ]);
         }
 

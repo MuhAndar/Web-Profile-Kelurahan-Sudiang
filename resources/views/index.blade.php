@@ -169,7 +169,8 @@
     <div class="row abouthy-img-grids no-gutters">
         @foreach ($tengah as $item)
         <div class="col-lg-4 col-md-6 img-one">
-            <img src="{{ asset('uploads/'.$item->gambar1) }}" alt=" " class="img-fluid">
+            <img src="{{ asset('uploads/'.$item->gambar1) }}" alt=" " width="510" height="490">
+            {{-- <img src="{{ asset('uploads/'.$item->gambar1) }}" alt=" " class="img-fluid"> --}}
             {{-- <img src="{{ asset('images/img4.jpg')}}" alt=" " class="img-fluid"> --}}
         </div>
         <div class="col-lg-4 col-md-6 img-one content-mid py-md-0 py-5">
@@ -180,7 +181,8 @@
             </div>
         </div>
         <div class="col-lg-4 col-md-6 img-one">
-            <img src="{{ asset('uploads/'.$item->gambar2)}}" alt=" " class="img-fluid">
+            <img src="{{ asset('uploads/'.$item->gambar2)}}" alt=" " width="510" height="490">
+            {{-- <img src="{{ asset('uploads/'.$item->gambar2)}}" alt=" " class="img-fluid"> --}}
             {{-- <img src="{{ asset('images/img2.jpg')}}" alt=" " class="img-fluid"> --}}
         </div>
         <div class="col-lg-4 col-md-6 img-info content-mid py-md-0 py-5">
@@ -191,7 +193,7 @@
             </div>
         </div>
         <div class="col-lg-4 col-md-6 img-one">
-            <img src="{{ asset('uploads/'.$item->gambar3) }}" alt=" " class="img-fluid">
+            <img src="{{ asset('uploads/'.$item->gambar3) }}" alt="" width="510" height="490">
             {{-- <img src="{{ asset('images/img8.jpg')}}" alt=" " class="img-fluid"> --}}
         </div>
         <div class="col-lg-4 col-md-6 img-info content-mid py-md-0 py-5">

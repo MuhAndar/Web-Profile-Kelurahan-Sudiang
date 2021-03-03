@@ -3,12 +3,12 @@
 <script src="{{ asset('plugins/datatables/dataTables.bootstrap.css') }}"></script>
 @endpush
   @section('title','Dashboard')
-  @section('page-title','Artikel')
+  @section('page-title','Profil')
   @section('content')
   <!-- Default box -->
   <div class="box">
     <div class="box-header">
-      <h3 class="box-title">Data Artikel</h3>
+      <h3 class="box-title">Data Ringkasan</h3>
       <div class="pull-right">
           <a href="{{ route('ringkasan.create') }}" class="btn btn-info">Tambah Data</a>
       </div>

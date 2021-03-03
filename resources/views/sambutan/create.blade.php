@@ -3,7 +3,7 @@
   <link rel="stylesheet" href="{{ asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}">
   @endpush
   @section('title','Dahboard')
-  @section('page-title','Tambah Sambutan')
+  @section('page-title','Profil')
   @section('content')
   <!-- Default box -->
   <div class="box">

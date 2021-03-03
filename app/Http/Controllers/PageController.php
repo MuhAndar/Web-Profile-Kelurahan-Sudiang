@@ -128,8 +128,9 @@ class PageController extends Controller
         $kebersihan3 = Kebersihan::where('id', '3')->get();
         $kebersihan4 = Kebersihan::where('id', '4')->get();
         $kebersihan5 = Kebersihan::where('id', '5')->get();
+        $kebersihan6 = Kebersihan::where('id', '6')->get();
         return view('1syarat.s_kebersihan' ,compact('kebersihan', 'kebersihan1', 'kebersihan2', 'kebersihan3', 
-                    'kebersihan4', 'kebersihan5', 'about'));
+                    'kebersihan4', 'kebersihan5', 'kebersihan6', 'about'));
     }
 
     public function sPemerintahan()

@@ -133,8 +133,8 @@
         <li class="treeview">
 
             {{-- <li><a href="{{ route('categories.test.index') }}"><i class="fa fa-adjust"></i>Categories</a></li> --}}
-            {{-- <li><a href="{{ route('articles.index') }}"><i class="fa fa-user"></i>Artikel</a></li>
-            <li><a href="{{ route('articles.index') }}"><i class="fa fa-book"></i>Syarat</a></li> --}}
+            <li><a href="{{ route('articles.index') }}"><i class="fa fa-user"></i>Artikel</a></li>
+            {{-- <li><a href="{{ route('articles.index') }}"><i class="fa fa-book"></i>Syarat</a></li> --}}
             <li><a href="{{ route('kontaks.index') }}"><i class="fa fa-adjust"></i>Kontak</a></li>
           </li>
       </ul>

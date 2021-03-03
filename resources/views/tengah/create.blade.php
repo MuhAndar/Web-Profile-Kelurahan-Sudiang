@@ -2,7 +2,7 @@
   @push('customcss')
   <link rel="stylesheet" href="{{ asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}">
   @endpush
-  @section('title','Dahboard')
+  @section('title','Dashboard')
   @section('page-title','Home')
   @section('content')
   <!-- Default box -->
@@ -15,27 +15,27 @@
       <form action="{{ route('tengah.store') }}" enctype="multipart/form-data" method="POST">
         @csrf
         <div class="form-group">
-          <label>Judul Artikel</label>
+          <label>Text 1</label>
           <input type="text" class="form-control" name="text1">
         </div>
         <div class="form-group">
-          <label>Gambar</label>
+          <label>Gambar 1</label>
           <input type="file" class="form-control" name="gambar1">
         </div>
         <div class="form-group">
-          <label>Judul Artikel</label>
+          <label>Text 2</label>
           <input type="text" class="form-control" name="text2">
         </div>
         <div class="form-group">
-          <label>Gambar</label>
+          <label>Gambar 2</label>
           <input type="file" class="form-control" name="gambar2">
         </div>
         <div class="form-group">
-          <label>Judul Artikel</label>
+          <label>Text 3</label>
           <input type="text" class="form-control" name="text3">
         </div>
         <div class="form-group">
-          <label>Gambar</label>
+          <label>Gambar 3</label>
           <input type="file" class="form-control" name="gambar3">
         </div>
         <div class="form-group">

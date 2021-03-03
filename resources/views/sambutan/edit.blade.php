@@ -3,7 +3,7 @@
   <link rel="stylesheet" href="{{ asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}">
   @endpush
   @section('title','Dashboard')
-  @section('page-title','Edit Sambutan')
+  @section('page-title','Profil')
   @section('content')
   <!-- Default box -->
   <div class="box">
@@ -29,7 +29,10 @@
         </div>
         <div class="form-group">
           <label>Isi</label>
-          <input type="text" class="form-control" name="isi2" placeholder="Isi"  value="{{$sambutan->isi2}}">
+           <textarea name="isi2" id="editor1" class="textarea" placeholder="Place some text here"
+                style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+              {!! $sambutan->isi2 !!}
+            </textarea>
         </div>
         <div class="form-group">
           <label>Gambar</label>

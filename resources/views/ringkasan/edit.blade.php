@@ -2,8 +2,8 @@
   @push('customcss')
   <link rel="stylesheet" href="{{ asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}">
   @endpush
-  @section('title','Dahboard')
-  @section('page-title','Edit Artikel')
+  @section('title','Dashboard')
+  @section('page-title','Profil')
   @section('content')
   <!-- Default box -->
   <div class="box">
@@ -21,7 +21,10 @@
         </div>
         <div class="form-group">
           <label>Isi Ringkasan</label>
-          <input type="text" value="{{$ringkasan->isi}}" class="form-control" name="isi">
+           <textarea name="isi" id="editor1" class="textarea" placeholder="Place some text here"
+                style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+              {!! $ringkasan->isi !!}
+            </textarea>
         </div>
         <div class="form-group">
           <label>Batas Wilayah Utara</label>

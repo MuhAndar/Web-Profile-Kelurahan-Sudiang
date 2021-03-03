@@ -3,7 +3,7 @@
 <script src="{{ asset('plugins/datatables/dataTables.bootstrap.css') }}"></script>
 @endpush
   @section('title','Dashboard')
-  @section('page-title','Artikel')
+  @section('page-title','Home')
   @section('content')
   <!-- Default box -->
   <div class="box">

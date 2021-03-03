@@ -2,8 +2,8 @@
   @push('customcss')
   <link rel="stylesheet" href="{{ asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}">
   @endpush
-  @section('title','Dahboard')
-  @section('page-title','Edit Visi Misi')
+  @section('title','Dashboard')
+  @section('page-title','Profil')
   @section('content')
   <!-- Default box -->
   <div class="box">
@@ -16,12 +16,15 @@
         @csrf
         @method('PUT')
         <div class="form-group">
-          <label>Text 1</label>
-          <input type="text" class="form-control" name="text1" placeholder="Nama"  value="{{$visimisi->text1}}">
+          <label>Visi</label>
+          <input type="text" class="form-control" name="text1" placeholder="Visi"  value="{{$visimisi->text1}}">
         </div>
         <div class="form-group">
-          <label>Text 2</label>
-          <input type="text" class="form-control" name="text2" placeholder="Nama"  value="{{$visimisi->text2}}">
+          <label>Misi</label>
+           <textarea name="text2" id="editor1" class="textarea" placeholder="Misi"
+                style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+              {!! $visimisi->text2 !!}
+            </textarea>
         </div>
         <div class="form-group">
           <label>Gambar</label>
